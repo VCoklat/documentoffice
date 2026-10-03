@@ -3,13 +3,17 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 /**
- * Hosting contract sentinel (Cloudflare Pages). Three of the campaign's
- * production-only defects lived in this layer (a vendor loader stuck behind
- * the index.html -> directory 308, the font catalog shipped without a cache
- * rule, sw.js/HTML that must never be cached). Pin the rules the app relies
- * on so an edit to public/_headers / _redirects / sw.js that drops one turns
- * red here first. The rules themselves are exercised for real by the
- * `e2e-pages` job (wrangler pages dev) and the production smoke.
+ * Hosting contract sentinel. Three of the campaign's production-only defects
+ * lived in this layer (a vendor loader stuck behind the index.html ->
+ * directory 308, the font catalog shipped without a cache rule, sw.js/HTML
+ * that must never be cached). Pin the rules the app relies on so an edit to
+ * public/_headers / _redirects / sws.toml / vercel.json / sw.js that drops one
+ * turns red here first. Every host this app ships on has to be covered:
+ * Cloudflare Pages (`_headers` + `_redirects`, exercised for real by the
+ * `e2e-pages` job running wrangler pages dev), the self-hosted Docker image
+ * (`sws.toml`, exercised by test/e2e/docker-cache-headers.spec.ts) and Vercel
+ * (`vercel.json`, which no job exercises -- so this describe block is the only
+ * thing standing between it and a silent regression).
  */
 const ROOT = resolve(__dirname, '../..');
 /** The x2t module, shipped brotli-compressed under its plain name. */
@@ -161,6 +165,87 @@ describe('sws.toml (self-hosted Docker)', () => {
     const dockerfile = read('Dockerfile');
     expect(dockerfile).toMatch(/COPY sws\.toml \/sws\.toml/);
     expect(dockerfile).toMatch(/ENV SERVER_CONFIG_FILE=\/sws\.toml/);
+  });
+});
+
+/**
+ * Vercel twin of the same contract. Vercel reads neither `_headers` nor
+ * `_redirects` (they are Cloudflare Pages files that happen to ship in the
+ * output), so a project deployed there gets none of it -- and its two defaults
+ * are actively wrong for this app:
+ *
+ *  - `cleanUrls` defaults to false, so every extensionless route 404s while
+ *    `/` keeps working: /editor, /history, /open/docx and every localized page
+ *    are built as `dist/<path>.html`. That is the whole of the
+ *    "/open/docx -> 404 document not found" report, served by our own 404.html.
+ *  - there is no caching contract at all, so the x2t wasm arrives as an opaque
+ *    blob (no Content-Encoding) and no document can be opened.
+ */
+describe('vercel.json (Vercel)', () => {
+  const config = JSON.parse(read('vercel.json')) as {
+    buildCommand?: string;
+    outputDirectory?: string;
+    cleanUrls?: boolean;
+    redirects: { source: string; destination: string; permanent?: boolean; statusCode?: number }[];
+    headers: { source: string; headers: { key: string; value: string }[] }[];
+  };
+  const rule = (source: string) => config.headers.find((entry) => entry.source === source);
+  const header = (source: string, key: string) =>
+    rule(source)?.headers.find((entry) => entry.key.toLowerCase() === key.toLowerCase())?.value;
+
+  it('enables clean URLs, without which every extensionless route 404s', () => {
+    // The pages are written as <path>.html and linked without the extension
+    // (bin/pages/pages.mjs, content/*/home.json). Vercel only serves
+    // /open/docx from open/docx.html when cleanUrls is on.
+    expect(config.cleanUrls).toBe(true);
+  });
+
+  it('builds through bin/build.sh into dist (a bare `vite build` skips the sw.js version stamps)', () => {
+    expect(config.buildCommand).toMatch(/bin\/build\.sh/);
+    expect(config.outputDirectory).toBe('dist');
+  });
+
+  it('declares the x2t wasm pre-encoded, the same as _headers and sws.toml', () => {
+    expect(header(WASM_PATH, 'Content-Encoding')).toBe('br');
+  });
+
+  it('pins the same immutable set as _headers (hashed assets, font catalog, x2t wasm)', () => {
+    for (const source of ['/assets/:path*', '/fonts/:id', WASM_PATH, '/ran-tokens.:hash.css']) {
+      expect(header(source, 'Cache-Control'), source).toMatch(/max-age=31536000.*immutable/);
+    }
+  });
+
+  it('declares the same compressible Content-Type on the font catalog as _headers', () => {
+    expect(header('/fonts/:id', 'Content-Type')).toBe('font/ttf');
+  });
+
+  it('never makes the patched vendor trees immutable', () => {
+    for (const entry of config.headers) {
+      if (/^\/(sdkjs|web-apps)\//.test(entry.source) && entry.source !== WASM_PATH) {
+        for (const value of entry.headers) {
+          if (value.key.toLowerCase() === 'cache-control') expect(value.value, entry.source).not.toMatch(/immutable/);
+        }
+      }
+    }
+  });
+
+  it('keeps vendor trees and the font catalog out of search indexes', () => {
+    for (const source of ['/sdkjs/:path*', '/web-apps/:path*', '/fonts/:id']) {
+      expect(header(source, 'X-Robots-Tag'), source).toMatch(/noindex/);
+    }
+  });
+
+  it('carries the same redirects as public/_redirects', () => {
+    const to = (source: string) => config.redirects.find((entry) => entry.source === source)?.destination;
+    expect(to('/zh')).toBe('/zh-CN/');
+    expect(to('/zh/:path*')).toBe('/zh-CN/:path*');
+    expect(to('/vs/google-docs')).toBe('/');
+    // `statusCode` is a private field in Vercel's schema; `permanent: true` is
+    // the documented way to ask for a 308.
+    for (const entry of config.redirects) {
+      expect(entry.statusCode, entry.source).toBeUndefined();
+      expect(entry.permanent, entry.source).toBe(true);
+    }
   });
 });
 
