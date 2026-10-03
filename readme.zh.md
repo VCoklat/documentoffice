@@ -178,6 +178,13 @@ pnpm build   # 产物在 dist/
 上传 `dist/` 即可。`public/_headers` 里写着本站期望的缓存契约（带哈希的资源永久缓存、
 service worker 永不缓存）；不支持该文件的托管也能跑，只是会多做校验。
 
+Vercel 建议保持以下项目设置：
+
+- Framework Preset：`Other`
+- Install Command：`pnpm install --frozen-lockfile`
+- Build Command：`pnpm run build`
+- Output Directory：`dist`
+
 Nginx 需要把 `index.html` 作为未知路由的兜底：
 
 ```nginx

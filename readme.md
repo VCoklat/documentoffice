@@ -191,6 +191,13 @@ Upload `dist/`. `public/_headers` carries the caching contract the site expects
 (hashed assets immutable, service worker never cached); hosts that ignore it
 still work, they just revalidate more.
 
+For Vercel, import the repository and keep these project settings:
+
+- Framework Preset: `Other`
+- Install Command: `pnpm install --frozen-lockfile`
+- Build Command: `pnpm run build`
+- Output Directory: `dist`
+
 For Nginx, serve `index.html` as the fallback for unknown routes:
 
 ```nginx
