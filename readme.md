@@ -202,7 +202,8 @@ location / {
 
 ### GitHub Pages
 
-`.github/workflows/pages-build-site.yml` builds and deploys on push to `main`.
+`.github/workflows/pages-build-site.yml` builds the full app (`pnpm run build`)
+and deploys `dist/` on push to `main`.
 Enable Pages in the repository settings with **GitHub Actions** as the source.
 
 ### Docker

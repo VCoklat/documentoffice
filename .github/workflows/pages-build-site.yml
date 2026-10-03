@@ -1,11 +1,6 @@
 name: pages-build-site
 on:
-  # The editor now lives at https://edit.chaxus.com (Cloudflare Pages).
-  # GitHub Pages publishes ONLY a client-side redirector (redirect/), so old
-  # ranuts.github.io/document/* links keep working (path + query preserved).
-  # The app now deploys to Cloudflare Pages from `main`, so GitHub Pages is
-  # main-based too: any push to main republishes the redirector. workflow_dispatch
-  # lets you trigger the first redirector deploy by hand once Cloudflare is live.
+  # Build and deploy the full static app to GitHub Pages from main.
   push:
     branches:
       - main
@@ -23,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Publish redirector
+    name: Build and publish app
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -31,11 +26,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # No build: just ship the static redirector (redirect/index.html + 404.html).
-      - name: Upload redirector artifact
+      - name: Set up toolchain
+        uses: ./.github/actions/setup
+
+      - name: Build production site
+        run: pnpm run build
+
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: "./redirect"
+          path: "./dist"
 
   deploy:
     name: Deploy to GitHub Pages

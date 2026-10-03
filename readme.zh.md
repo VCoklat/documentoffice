@@ -189,7 +189,8 @@ location / {
 
 ### GitHub Pages
 
-`.github/workflows/pages-build-site.yml` 会在推送到 `main` 时构建并部署。
+`.github/workflows/pages-build-site.yml` 会在推送到 `main` 时构建完整应用
+（`pnpm run build`）并部署 `dist/`。
 在仓库设置里启用 Pages，来源选 **GitHub Actions**。
 
 ### Docker
