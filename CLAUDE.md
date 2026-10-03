@@ -355,16 +355,21 @@ issue #144 第二轮就栽在这里）；改 `_headers` 时必须同步改它，
 （`E2E_DOCKER=1`）钉死两边。
 
 **Vercel 部署**（根目录 `vercel.json`）：Vercel 既不读 `_headers` 也不读
-`_redirects`（那是 Cloudflare Pages 的文件，只是碰巧被拷进 dist），而它的两个默认值
-对本应用都是错的。**`cleanUrls` 默认 false** → `/editor`、`/history`、`/open/docx`
-和所有本地化页面全部 404，而 `/` 照常工作：页面产出的是 `dist/<path>.html`，
-站内链接写的却是无扩展名路径（`bin/pages/pages.mjs`、`content/*/home.json`）。
-这就是"`/open/docx` → 404 document not found"那个报告的全部成因，返回的还是我们
-自己的 `public/404.html`。其次没有缓存契约 → x2t.wasm 拿不到 `Content-Encoding`，
-文档一个也打不开。所以 `vercel.json` 把 `cleanUrls`、构建命令（必须走
-`bin/build.sh`，否则 sw.js 的版本戳不注入）、`_headers` 那套 header 契约和
-`_redirects` 的跳转都重新声明了一遍。没有任何 job 真正部署 Vercel，
-`test/unit/hosting-contract.test.ts` 里的 `vercel.json (Vercel)` 是它唯一的哨兵。
+`_redirects`（那是 Cloudflare Pages 的文件，只是碰巧被拷进 dist），而它的默认值对本
+应用是错的：**`cleanUrls` 默认 false** → `/editor`、`/history`、`/open/docx` 和所有
+本地化页面全部 404，而 `/` 照常工作——页面产出的是 `dist/<path>.html`，站内链接写的
+却是无扩展名路径（`bin/pages/pages.mjs`、`content/*/home.json`）。这就是
+"`/open/docx` → 404 document not found"那个报告的全部成因，返回的还是我们自己的
+`public/404.html`。所以 `vercel.json` 存在，且只声明这一件事。
+
+**未完成的一步：Vercel 的缓存契约。** 把 `_headers` 那套 header（含 x2t.wasm 的
+`Content-Encoding: br`）和 `_redirects` 的跳转一并写进 `vercel.json` 后，两个 Vercel
+project 的构建都在 ~30 秒内直接失败（没有构建输出），而同一份代码不带这些字段时构建
+成功。日志在 dashboard 里（`npx vercel inspect <dpl_...> --logs`），拿到平台的具体报错
+之前不要把这些字段加回去。后果：Vercel 上 x2t.wasm 拿不到 `Content-Encoding`。
+
+没有任何 job 真正部署 Vercel，`test/unit/hosting-contract.test.ts` 里的
+`vercel.json (Vercel)` 是它唯一的哨兵。
 
 E2E 在 CI 中依赖 `lint` job 成功后才运行（`needs: lint`）。
 
@@ -913,8 +918,8 @@ v7 代码分支（OO_VARIANT、页面级 x2t 打开转换、empty_bin 模板、v
   `x2t.wasm.br`（6,898,179 字节，`brotli -q 11`；对比最好的 gzip（zopfli `--i15`）
   9,483,006、裸 42,111,200——全站最大的那个下载省掉 2.58 MB。brotli 不是仓库依赖，
   vendor 升级后手动重跑 `brotli -q 11 -c x2t.wasm > x2t.wasm.br`，`vendor-contract`
-  的尺寸门会提醒）。四处托管各自声明 `Content-Encoding: br`（`public/_headers` /
-  `sws.toml` / `vercel.json` / `vite.config.ts` 的 `precompressedAssets` 中间件），
+  的尺寸门会提醒）。三处托管各自声明 `Content-Encoding: br`（`public/_headers` /
+  `sws.toml` / `vite.config.ts` 的 `precompressedAssets` 中间件），
   **浏览器在网络层就解压完了，我们这边一行解压代码都没有**。
   **`.br` 这个扩展名和 `_headers` 里"没有 Content-Type 规则"两件事都是承重的**：
   `wrangler pages dev`（`e2e-pages` 跑的那个）会按可压缩性**重新压一遍并覆盖掉

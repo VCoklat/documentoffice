@@ -171,81 +171,31 @@ describe('sws.toml (self-hosted Docker)', () => {
 /**
  * Vercel twin of the same contract. Vercel reads neither `_headers` nor
  * `_redirects` (they are Cloudflare Pages files that happen to ship in the
- * output), so a project deployed there gets none of it -- and its two defaults
- * are actively wrong for this app:
+ * output), and its defaults are wrong for this app in two ways:
  *
  *  - `cleanUrls` defaults to false, so every extensionless route 404s while
  *    `/` keeps working: /editor, /history, /open/docx and every localized page
  *    are built as `dist/<path>.html`. That is the whole of the
- *    "/open/docx -> 404 document not found" report, served by our own 404.html.
- *  - there is no caching contract at all, so the x2t wasm arrives as an opaque
- *    blob (no Content-Encoding) and no document can be opened.
+ *    "/open/docx -> 404 document not found" report, answered by our own
+ *    public/404.html. This is what the file below exists to pin.
+ *  - there is no caching contract at all, so the x2t wasm arrives without
+ *    Content-Encoding and no document can be opened.
+ *
+ * The header/redirect half is deliberately NOT declared here yet: the first
+ * version of this file carried the full `_headers` + `_redirects` twin and the
+ * Vercel build rejected the deployment outright (both projects, ~30s in, no
+ * build output). Until the platform's complaint is read off the build log, the
+ * file stays at the single property that fixes the 404 -- do not re-add rules
+ * here without a green Vercel deployment to prove they are accepted.
  */
 describe('vercel.json (Vercel)', () => {
-  const config = JSON.parse(read('vercel.json')) as {
-    buildCommand?: string;
-    outputDirectory?: string;
-    cleanUrls?: boolean;
-    redirects: { source: string; destination: string; permanent?: boolean; statusCode?: number }[];
-    headers: { source: string; headers: { key: string; value: string }[] }[];
-  };
-  const rule = (source: string) => config.headers.find((entry) => entry.source === source);
-  const header = (source: string, key: string) =>
-    rule(source)?.headers.find((entry) => entry.key.toLowerCase() === key.toLowerCase())?.value;
+  const config = JSON.parse(read('vercel.json')) as { cleanUrls?: boolean };
 
   it('enables clean URLs, without which every extensionless route 404s', () => {
     // The pages are written as <path>.html and linked without the extension
     // (bin/pages/pages.mjs, content/*/home.json). Vercel only serves
     // /open/docx from open/docx.html when cleanUrls is on.
     expect(config.cleanUrls).toBe(true);
-  });
-
-  it('builds through bin/build.sh into dist (a bare `vite build` skips the sw.js version stamps)', () => {
-    expect(config.buildCommand).toMatch(/bin\/build\.sh/);
-    expect(config.outputDirectory).toBe('dist');
-  });
-
-  it('declares the x2t wasm pre-encoded, the same as _headers and sws.toml', () => {
-    expect(header(WASM_PATH, 'Content-Encoding')).toBe('br');
-  });
-
-  it('pins the same immutable set as _headers (hashed assets, font catalog, x2t wasm)', () => {
-    for (const source of ['/assets/:path*', '/fonts/:id', WASM_PATH, '/ran-tokens.:hash.css']) {
-      expect(header(source, 'Cache-Control'), source).toMatch(/max-age=31536000.*immutable/);
-    }
-  });
-
-  it('declares the same compressible Content-Type on the font catalog as _headers', () => {
-    expect(header('/fonts/:id', 'Content-Type')).toBe('font/ttf');
-  });
-
-  it('never makes the patched vendor trees immutable', () => {
-    for (const entry of config.headers) {
-      if (/^\/(sdkjs|web-apps)\//.test(entry.source) && entry.source !== WASM_PATH) {
-        for (const value of entry.headers) {
-          if (value.key.toLowerCase() === 'cache-control') expect(value.value, entry.source).not.toMatch(/immutable/);
-        }
-      }
-    }
-  });
-
-  it('keeps vendor trees and the font catalog out of search indexes', () => {
-    for (const source of ['/sdkjs/:path*', '/web-apps/:path*', '/fonts/:id']) {
-      expect(header(source, 'X-Robots-Tag'), source).toMatch(/noindex/);
-    }
-  });
-
-  it('carries the same redirects as public/_redirects', () => {
-    const to = (source: string) => config.redirects.find((entry) => entry.source === source)?.destination;
-    expect(to('/zh')).toBe('/zh-CN/');
-    expect(to('/zh/:path*')).toBe('/zh-CN/:path*');
-    expect(to('/vs/google-docs')).toBe('/');
-    // `statusCode` is a private field in Vercel's schema; `permanent: true` is
-    // the documented way to ask for a 308.
-    for (const entry of config.redirects) {
-      expect(entry.statusCode, entry.source).toBeUndefined();
-      expect(entry.permanent, entry.source).toBe(true);
-    }
   });
 });
 
