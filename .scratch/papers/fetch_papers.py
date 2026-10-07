@@ -430,6 +430,13 @@ def compress_pdf(path, limit_mb=4.0):
 
 
 # ------------------------------------------------------- JATS XML -> HTML -> PDF
+def is_jats(data):
+    if not data:
+        return False
+    return (data[:4000].lstrip().startswith(b"<") and b"<!doctype" not in data[:200].lower()
+            and b"<article" in data[:6000] and b"<body" in data)
+
+
 def jats_to_html(xml_bytes, fallback_title):
     try:
         root = ET.fromstring(xml_bytes)
@@ -770,21 +777,22 @@ def process(job):
             st, data, final, err = http(
                 f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML",
                 timeout=90, retries=1)
-            if data and data.lstrip().startswith(b"<") and b"<body" in data:
+            if is_jats(data):
                 break
-            rec["notes"].append(f"jats attempt {attempt + 1}: status={st} len={len(data)}")
+            rec["notes"].append(f"jats attempt {attempt + 1}: status={st} len={len(data)}"
+                                f" html={int(bool(data) and b'<!doctype' in data[:200].lower())}")
             time.sleep(4 + attempt * 4)
-        if not (data and data.lstrip().startswith(b"<") and b"<body" in data):
+        if not is_jats(data):
             digits = re.sub(r"[^0-9]", "", pmcid)
             st, edata, _, eerr = http(
                 "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
                 f"?db=pmc&id={digits}&retmode=xml", timeout=90, retries=1)
-            if edata and b"<article" in edata[:8000]:
+            if is_jats(edata):
                 data = edata
                 rec["notes"].append(f"jats via eutils ({len(edata)}B)")
             else:
                 rec["notes"].append(f"eutils failed: status={st} len={len(edata)} {eerr or ''}")
-        if data and data.lstrip().startswith(b"<"):
+        if is_jats(data):
             doc, jerr = jats_to_html(data, title)
             if doc:
                 ok, herr = html_to_pdf(doc, "/tmp/_jats.pdf")
