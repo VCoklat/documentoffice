@@ -577,6 +577,18 @@ def candidates_from_landing_html(landing_url):
     return out[:6], None
 
 
+def jina_text(url):
+    """Fetch a URL through the r.jina.ai reader (helps when a publisher blocks datacentres)."""
+    st, data, _, err = http("https://r.jina.ai/" + url, timeout=120,
+                            headers={"Accept": "text/plain", "X-Return-Format": "text"}, retries=1)
+    if not data:
+        return None, err or f"status={st}"
+    txt = data.decode("utf-8", "replace")
+    if len(txt) < 4000 or "Just a moment" in txt[:2000]:
+        return None, f"too short ({len(txt)}B)"
+    return txt, ""
+
+
 def landing_html_is_fulltext(txt):
     low = txt.lower()
     markers = ["<section", "abstract", "references", "introduction"]
@@ -805,6 +817,28 @@ def process(job):
                                 "pdf_pages": pdf_pages(rec["_pdf"])})
                     return finish(rec, job)
             rec["notes"].append(f"jats conversion failed: {jerr}")
+
+    # ---- 4b. fallback: reader proxy for publisher pages that block datacentres
+    if rec.get("is_oa") or (up and up.get("is_oa")):
+        for src_url in (cands[0]["url"] if cands else None, landings[0] if landings else None):
+            if not src_url or not src_url.startswith("http"):
+                continue
+            txt, jerr = jina_text(src_url)
+            if not txt:
+                rec["notes"].append(f"reader proxy failed ({urllib.parse.urlparse(src_url).netloc}): {jerr}")
+                continue
+            body = "<pre style='white-space:pre-wrap;font-family:inherit;font-size:9.5pt'>" + htmlmod.escape(txt) + "</pre>"
+            doc = wrap_html(title, f"{job.get('journal', '')} {job.get('year', '')}", body,
+                            '<div class="notice"><b>Text rendition.</b> The publisher blocks automated PDF '
+                            f'downloads, so this file was generated from the open-access full text at '
+                            f'{htmlmod.escape(src_url)}. Figures and pagination are not reproduced; please cite '
+                            'the original.</div>')
+            if html_to_pdf(doc, "/tmp/_jina.pdf"):
+                with open("/tmp/_jina.pdf", "rb") as fh:
+                    rec["_pdf"] = fh.read()
+                rec.update({"status": "html-fulltext", "source_url": src_url, "source": "reader-proxy",
+                            "bytes": len(rec["_pdf"]), "pdf_pages": pdf_pages(rec["_pdf"])})
+                return finish(rec, job)
 
     # ---- 5. fallback: open access landing page -> pdf
     if rec.get("is_oa") or (up and up.get("is_oa")):
