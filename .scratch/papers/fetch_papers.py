@@ -161,19 +161,28 @@ def openalex_search(title):
     return (best, best_r) if best else (None, 0.0)
 
 
-def epmc_search(query, result_type="core", page_size=5):
+def epmc_search(query, result_type="core", page_size=5, timeout=90):
     url = ("https://www.ebi.ac.uk/europepmc/webservices/rest/search?"
            + urllib.parse.urlencode({"query": query, "format": "json",
                                      "resultType": result_type, "pageSize": page_size}))
-    d, err = get_json(url)
+    d, err = get_json(url, timeout=timeout)
     if not d:
         return [], err
     return d.get("resultList", {}).get("result", []), None
 
 
 def epmc_by_doi(doi):
-    res, err = epmc_search(f'DOI:"{doi}"')
-    return (res[0] if res else None), err
+    for rtype, to in (("core", 90), ("lite", 60), ("core", 90)):
+        url = ("https://www.ebi.ac.uk/europepmc/webservices/rest/search?"
+               + urllib.parse.urlencode({"query": f'DOI:"{doi}"', "format": "json",
+                                         "resultType": rtype, "pageSize": 1}))
+        d, err = get_json(url, timeout=to)
+        if d:
+            res = d.get("resultList", {}).get("result", [])
+            if res:
+                return res[0], None
+        time.sleep(3)
+    return None, err
 
 
 def epmc_by_title(title):
@@ -262,7 +271,7 @@ def pdf_text(data, pages=3):
         return None
 
 
-def content_matches(data, title, doi):
+def content_matches(data, title, doi, journal=""):
     """Guard against repositories handing us the wrong article."""
     txt = pdf_text(data)
     if txt is None:
@@ -271,24 +280,68 @@ def content_matches(data, title, doi):
     toks = title_tokens(title)
     frac = sum(1 for t in toks if t in nt) / max(1, len(toks))
     doi_hit = bool(doi) and norm(doi) in nt
-    headline = " ".join(toks[:9])
-    if frac >= 0.72 or doi_hit or (headline and headline in nt):
-        return True, f"match(frac={frac:.2f},doi={int(doi_hit)})"
-    return False, f"mismatch(frac={frac:.2f}) :: {re.sub(chr(92)+'s+', ' ', txt)[:90]}"
+    headline = " ".join(toks[:8])
+    jtok = [t for t in norm(journal).split() if len(t) > 3]
+    jhit = sum(1 for t in jtok if t in nt) >= max(1, min(2, len(jtok)))
+    if doi_hit or frac >= 0.85 or (headline and headline in nt) or (frac >= 0.72 and jhit):
+        return True, f"match(frac={frac:.2f},doi={int(doi_hit)},journal={int(jhit)})"
+    return False, f"mismatch(frac={frac:.2f},journal={int(jhit)}) :: {re.sub(chr(92)+'s+', ' ', txt)[:80]}"
 
 
 def pdf_pages(data):
     return len(re.findall(rb"/Type\s*/Page[^s]", data))
 
 
+MDPI_SLUGS = {"pr": "processes", "ph": "pharmaceuticals", "biom": "biomolecules",
+              "ijms": "ijms", "cells": "cells", "pharmaceutics": "pharmaceutics",
+              "biomedicines": "biomedicines", "molecules": "molecules", "ijerph": "ijerph",
+              "cancers": "cancers", "nutrients": "nutrients", "vaccines": "vaccines",
+              "jcm": "jcm", "life": "life", "genes": "genes", "membranes": "membranes",
+              "antioxidants": "antioxidants", "micromachines": "micromachines"}
+
+
+def mdpi_cdn_candidates(doi):
+    """MDPI's own CDN serves article PDFs without a Cloudflare challenge."""
+    m = re.match(r"10\.3390/([a-z]+?)(\d+)$", (doi or "").lower())
+    if not m:
+        return []
+    slug, digits = m.group(1), m.group(2)
+    out = []
+    for vlen in (2, 1):
+        vol, rest = digits[:vlen], digits[vlen:]
+        if len(rest) < 5:
+            continue
+        art = rest[2:]
+        if not (3 <= len(art) <= 4):
+            continue
+        for jslug in {slug, MDPI_SLUGS.get(slug, slug)}:
+            name = f"{jslug}-{int(vol):02d}-{int(art):05d}"
+            url = f"https://mdpi-res.com/d_attachment/{jslug}/{name}/article_deploy/{name}.pdf"
+            if url not in out:
+                out.append(url)
+    return out
+
+
+def pmc_oa_links(pmcid):
+    """NCBI OA service (old and new host) -> list of downloadable package urls."""
+    links = []
+    for host in ("https://pmc.ncbi.nlm.nih.gov", "https://www.ncbi.nlm.nih.gov"):
+        st, data, _, err = http(f"{host}/pmc/utils/oa/oa.fcgi?id={pmcid}", timeout=40)
+        if not data:
+            continue
+        txt = data.decode("utf-8", "replace")
+        for href in re.findall(r'href="([^"]+)"', txt):
+            if href.lower().endswith((".tar.gz", ".pdf")):
+                links.append(href.replace("ftp://", "https://"))
+        if links:
+            break
+    return links
+
+
 def pmc_oa_package_pdf(pmcid):
     """Download the PDF from NCBI's OA service (works for PMC OA subset)."""
-    st, data, _, err = http(f"https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id={pmcid}", timeout=45)
-    if not data:
-        return None, err or f"status={st}"
-    txt = data.decode("utf-8", "replace")
-    links = re.findall(r'href="([^"]+)"', txt)
-    cands = [l for l in links if l.lower().endswith(".tar.gz")] + [l for l in links if l.lower().endswith(".pdf")]
+    cands = [l for l in pmc_oa_links(pmcid) if l.lower().endswith(".pdf")]
+    cands += [l for l in pmc_oa_links(pmcid) if l.lower().endswith(".tar.gz")]
     if not cands:
         return None, "no oa links"
     for link in cands:
@@ -436,7 +489,7 @@ def jats_to_html(xml_bytes, fallback_title):
     meta = root.find(".//journal-title")
     journal = "".join(meta.itertext()).strip() if meta is not None else ""
     inner = render(body if body is not None else root)
-    if len(strip_tags(inner)) < 3000:
+    if len(strip_tags(inner)) < 1200:
         return None, "jats body too small"
     doc = wrap_html(title, journal, inner)
     return doc, ""
@@ -623,7 +676,9 @@ def process(job):
             return
         cands.append({"url": url, "source": source, **kw})
 
-    # publisher patterns first (fastest + most reliable)
+    # MDPI CDN + publisher patterns first (fastest + most reliable)
+    for u in mdpi_cdn_candidates(doi):
+        add(u, "mdpi-cdn")
     for land in landings[:4]:
         for c in publisher_candidates(doi, land):
             add(c["url"], c["source"])
@@ -693,7 +748,7 @@ def process(job):
         else:
             continue
         if looks_like_pdf(data):
-            good, why = content_matches(data, title, doi)
+            good, why = content_matches(data, title, doi, job.get('journal', ''))
             if not good:
                 rec["notes"].append(f"rejected wrong-content pdf ({c['source']}): {why}")
                 continue
@@ -706,9 +761,17 @@ def process(job):
         rec["notes"].append(f"candidate failed ({c['source']}): {err or 'not a pdf ' + str(st)}")
 
     # ---- 4. fallback: Europe PMC JATS full text
-    if ep and ep.get("pmcid"):
-        pmcid = ep["pmcid"]
-        st, data, final, err = http(f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML")
+    if rec.get("pmcid"):
+        pmcid = rec["pmcid"]
+        data = b""
+        for attempt in range(3):
+            st, data, final, err = http(
+                f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML",
+                timeout=90, retries=1)
+            if data and data.lstrip().startswith(b"<") and b"<body" in data:
+                break
+            rec["notes"].append(f"jats attempt {attempt + 1}: status={st} len={len(data)}")
+            time.sleep(4 + attempt * 4)
         if data and data.lstrip().startswith(b"<"):
             doc, jerr = jats_to_html(data, title)
             if doc:
@@ -801,6 +864,23 @@ def process(job):
 RANK = {"error": 0, "unresolved": 0, "abstract-only": 1, "html-fulltext": 2, "downloaded": 3}
 
 
+def is_garbage_pdf(path):
+    try:
+        rd = PdfReader(path) if False else None
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        import io as _io
+        from pypdf import PdfReader
+        with open(path, "rb") as fh:
+            rd = PdfReader(_io.BytesIO(fh.read()))
+        txt = " ".join((rd.pages[i].extract_text() or "") for i in range(min(2, len(rd.pages)))).lower()
+        return any(s in txt for s in ("checking your browser", "just a moment",
+                                      "enable javascript and cookies", "recaptcha"))
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def finish(rec, job):
     pdf = rec.pop("_pdf", None)
     n = job["n"]
@@ -808,7 +888,9 @@ def finish(rec, job):
     prev_path = os.path.join(REPO, prev["file"]) if prev.get("file") else None
     keep_prev = False
     if prev_path and os.path.exists(prev_path):
-        if RANK.get(prev.get("status"), 0) > RANK.get(rec["status"], 0):
+        if is_garbage_pdf(prev_path):
+            keep_prev = False  # challenge pages are worthless, replace them
+        elif RANK.get(prev.get("status"), 0) > RANK.get(rec["status"], 0):
             keep_prev = True
         elif RANK.get(prev.get("status"), 0) == RANK.get(rec["status"], 0) == 3 and pdf:
             # a new full-text pdf with suspiciously few pages is worse than the old one
