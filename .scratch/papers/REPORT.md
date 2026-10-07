@@ -1,8 +1,8 @@
 # Paper download report
 
 - total processed: **37**
-- open-access full text: **28**
-- abstract record only: **9**
+- open-access full text: **30**
+- abstract record only: **7**
 - unresolved/error: **0**
 
 | # | Title | Status | Source | File |
@@ -22,7 +22,7 @@
 | 13 | Mesenchymal stem cell-derived exosomes as drug delivery vehicles in di | downloaded | epmc-Europe_PMC | 13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf |
 | 14 | Overview and update on methods for cargo loading into extracellular ve | downloaded | mdpi-cdn | 14 - Overview and update on methods for cargo loading into extracellular vesicles.pdf |
 | 15 | Minimal information for studies of extracellular vesicles (MISEV2023): | downloaded | unpaywall | 15 - Minimal information for studies of extracellular vesicles (MISEV2023) From basic to advanced approaches.pdf |
-| 16 | Ultrasonication outperforms electroporation for extracellular vesicle  | abstract-only | abstract-record | 16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf |
+| 16 | Ultrasonication outperforms electroporation for extracellular vesicle  | html-fulltext | europepmc-jats | 16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf |
 | 17 | Insights into exosome transport through the blood-brain barrier and th | downloaded | mdpi-cdn | 17 - Insights into exosome transport through the blood-brain barrier and the potential therapeutical applications in brain diseases.pdf |
 | 18 | The hidden power of the secretome: therapeutic potential on wound heal | downloaded | mdpi-cdn | 18 - The hidden power of the secretome therapeutic potential on wound healing and Cell-Free regenerative medicine - A systematic review.pdf |
 | 19 | Exosomes: potential disease biomarkers and new therapeutic targets | downloaded | mdpi-cdn | 19 - Exosomes potential disease biomarkers and new therapeutic targets.pdf |
@@ -34,7 +34,7 @@
 | 25 | Human plasma derived exosomes: Impact of active and passive drug loadi | html-fulltext | europepmc-jats | 25 - Human plasma derived exosomes Impact of active and passive drug loading approaches on drug delivery.pdf |
 | 26 | Doxorubicin loading into milk and mesenchymal stem cells' extracellula | downloaded | mdpi-cdn | 26 - Doxorubicin loading into milk and mesenchymal stem cells' extracellular vesicles as drug delivery vehicles.pdf |
 | 27 | Mesenchymal Stem Cell Exosome-Mediated Delivery of Paclitaxel for Panc | downloaded | mdpi-cdn | 27 - Mesenchymal Stem Cell Exosome-Mediated Delivery of Paclitaxel for Pancreatic Cancer Therapy.pdf |
-| 28 | Development of exosome-encapsulated paclitaxel to overcome MDR in canc | abstract-only | abstract-record | 28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf |
+| 28 | Development of exosome-encapsulated paclitaxel to overcome MDR in canc | html-fulltext | europepmc-jats | 28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf |
 | 29 | Current strategies for exosome cargo loading and targeting delivery | downloaded | mdpi-cdn | 29 - Current strategies for exosome cargo loading and targeting delivery.pdf |
 | 30 | Mesenchymal stem cell exosomes as nanotherapeutic agents for neurodege | downloaded | unpaywall-best | 30 - Mesenchymal stem cell exosomes as nanotherapeutic agents for neurodegenerative diseases.pdf |
 | 31 | Mesenchymal stem cell exosomes: a two-edged sword in cancer therapy | downloaded | citation_pdf_url | 31 - Mesenchymal stem cell exosomes a two-edged sword in cancer therapy.pdf |
@@ -138,10 +138,10 @@
 - notes: candidate failed (wiley-pattern): HTTP 403; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1000)>; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 200
 
 ### 16. Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion
-- status: `abstract-only` | doi: `10.1016/j.vesic.2024.100052` | match: 1.0
-- file: `papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf` (33030 bytes, ? pages)
-- source: https://doi.org/10.1016/j.vesic.2024.100052
-- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; jats attempt 1: status=500 len=287 html=0; jats attempt 2: status=500 len=287 html=0; jats attempt 3: status=500 len=287 html=0; eutils failed: status=200 len=82927 
+- status: `html-fulltext` | doi: `10.1016/j.vesic.2024.100052` | match: 1.0
+- file: `papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf` (133649 bytes, 8 pages)
+- source: https://europepmc.org/article/MED/39726440
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; jats attempt 1: status=500 len=287 html=0; jats attempt 2: status=500 len=287 html=0; jats attempt 3: status=500 len=287 html=0; jats via eutils (82927B)
 
 ### 17. Insights into exosome transport through the blood-brain barrier and the potential therapeutical applications in brain diseases
 - status: `downloaded` | doi: `10.3390/ph16040571` | match: 1.0
@@ -210,10 +210,10 @@
 - notes: candidate failed (pmc-oa-package): no oa links
 
 ### 28. Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells
-- status: `abstract-only` | doi: `10.1016/j.nano.2015.10.012` | match: 1.0
-- file: `papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf` (34533 bytes, ? pages)
-- source: https://www.ncbi.nlm.nih.gov/pmc/articles/4809755
-- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 203; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (semanticscholar): HTTP 403; jats attempt 1: status=500 len=287 html=0; jats attempt 2: status=500 len=287 html=0; jats attempt 3: status=500 len=287 html=0; eutils failed: status=200 len=111233 
+- status: `html-fulltext` | doi: `10.1016/j.nano.2015.10.012` | match: 1.0
+- file: `papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf` (185937 bytes, 9 pages)
+- source: https://europepmc.org/article/MED/26586551
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 203; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (semanticscholar): HTTP 403; jats attempt 1: status=500 len=287 html=0; jats attempt 2: status=500 len=287 html=0; jats attempt 3: status=500 len=287 html=0; jats via eutils (111233B)
 
 ### 29. Current strategies for exosome cargo loading and targeting delivery
 - status: `downloaded` | doi: `10.3390/cells12101416` | match: 1.0

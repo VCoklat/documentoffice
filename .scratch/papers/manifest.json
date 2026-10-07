@@ -414,9 +414,9 @@
   "year": 2024,
   "ref": "Extracell Vesicle. 2024;4:100052",
   "doi": "10.1016/j.vesic.2024.100052",
-  "status": "abstract-only",
+  "status": "html-fulltext",
   "file": "papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf",
-  "source_url": "https://doi.org/10.1016/j.vesic.2024.100052",
+  "source_url": "https://europepmc.org/article/MED/39726440",
   "license": null,
   "match_score": 1.0,
   "notes": [
@@ -424,20 +424,21 @@
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 500",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
    "jats attempt 1: status=500 len=287 html=0",
    "jats attempt 2: status=500 len=287 html=0",
    "jats attempt 3: status=500 len=287 html=0",
-   "eutils failed: status=200 len=82927 "
+   "jats via eutils (82927B)"
   ],
   "is_oa": true,
   "pmcid": "PMC11671129",
   "pmid": "39726440",
   "s2_abstract": "Extracellular vesicles (EVs), submicron-sized membranous structures released by cells, serve as vehicles of tissue-specific proteins and nucleic acids, facilitating intercellular communication and playing roles in pathophysiological processes. Leveraging their unique characteristics, EVs have emerged as promising drug delivery nanocarriers. Electroporation (EP) and ultrasonication (US) are among the prevalent techniques used for loading exogenous drugs into EVs owing to their simplicity and efficiency. However, the effectiveness of the two methods in depleting initial EV cargo has been overlooked. But this information is indispensable, as the bioactive residuals of EVs, notably derived from tumor or stem donor cells, may impact downstream therapeutic effects. Bridging this knowledge gap, therefore, can guide the selection of optimal drugs and loading methods tailored to therapeutic objectives. Here, we used high-throughput sequencing to investigate the protein and small RNA cargo of EVs treated with EP and US, respectively. We found that US exhibits higher efficacy in depleting EV cargo compared to EP, while US may also deplete essential endogenous molecules for combination therapy. Neither method demonstrated significant selectivity in cargo depletion, but they might preferentially retain few specific molecules. Additionally, membrane proteins are more prone to loss during US and EP treatments than cytoplasmic proteins.",
-  "source": "abstract-record",
-  "bytes": 33030
+  "source": "europepmc-jats",
+  "bytes": 133649,
+  "pdf_pages": 8
  },
  {
   "n": 17,
@@ -723,9 +724,9 @@
   "year": 2016,
   "ref": "Nanomedicine. 2016;12(3):655-664",
   "doi": "10.1016/j.nano.2015.10.012",
-  "status": "abstract-only",
+  "status": "html-fulltext",
   "file": "papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf",
-  "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4809755",
+  "source_url": "https://europepmc.org/article/MED/26586551",
   "license": null,
   "match_score": 1.0,
   "notes": [
@@ -733,21 +734,22 @@
    "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (epmc-DOI): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 500",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
    "candidate failed (semanticscholar): HTTP 403",
    "jats attempt 1: status=500 len=287 html=0",
    "jats attempt 2: status=500 len=287 html=0",
    "jats attempt 3: status=500 len=287 html=0",
-   "eutils failed: status=200 len=111233 "
+   "jats via eutils (111233B)"
   ],
   "is_oa": true,
   "pmcid": "PMC4809755",
   "pmid": "26586551",
   "s2_abstract": "Exosomes have recently come into focus as “natural nanoparticles” for use as drug delivery vehicles. Our objective was to assess the feasibility of an exosome-based drug delivery platform for a potent chemotherapeutic agent, paclitaxel (PTX), to treat MDR cancer. Herein, we developed and compared different methods of loading exosomes released by macrophages with PTX (exoPTX), and characterized their size, stability, drug release, and in vitro antitumor efficacy. Reformation of the exosomal membrane upon sonication resulted in high loading efficiency and sustained drug release. Importantly, incorporation of PTX into exosomes increased cytotoxicity more than 50 times in drug resistant MDCKMDR1 (Pgp+) cells. Next, our studies demonstrated a nearly complete co-localization of airway-delivered exosomes with cancer cells in a model of murine Lewis Lung Carcinoma pulmonary metastases, and a potent anticancer effect in this mouse model. We conclude that exoPTX holds significant potential for the delivery of various chemotherapeutics to treat drug resistant cancers.",
-  "source": "abstract-record",
-  "bytes": 34533
+  "source": "europepmc-jats",
+  "bytes": 185937,
+  "pdf_pages": 9
  },
  {
   "n": 29,
