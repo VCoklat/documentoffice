@@ -1,55 +1,19 @@
-[08:58:17] loaded previous manifest: 37 entries
-[08:58:17] --- [04/37] Mesenchymal stem cell-derived extracellular vesicles: Recent therapeutics and ta
-[08:58:45]     -> abstract-only | papers/04 - Mesenchymal stem cell-derived extracellular vesicles Recent therapeutics and targeted drug delivery advances.pdf | https://doi.org/10.1002/jex2.156
-[08:58:45]        note: doi resolved via OpenAlex title search
-[08:58:45]        note: candidate failed (wiley-pattern): HTTP 403
-[08:58:45]        note: candidate failed (unpaywall-url): HTTP 403
-[08:58:45]        note: candidate failed (unpaywall-url): HTTP 403
-[08:58:45] --- [06/37] Exosomes in neurodegenerative diseases: Therapeutic potential and modification m
-[08:58:55]     -> html-fulltext | papers/06 - Exosomes in neurodegenerative diseases Therapeutic potential and modification methods.pdf | https://europepmc.org/article/MED/40326981
-[08:58:55]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:58:55]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:58:55]        note: candidate failed (epmc-api-pdf): HTTP 404
-[08:58:55]        note: candidate failed (pmc-pdf): not a pdf 200
-[08:58:55] --- [11/37] MSC-derived extracellular vesicles: Precision miRNA delivery for overcoming canc
-[08:59:04]     -> html-fulltext | papers/11 - MSC-derived extracellular vesicles Precision miRNA delivery for overcoming cancer therapy resistance.pdf | https://europepmc.org/article/MED/40237010
-[08:59:04]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:59:04]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:59:04]        note: candidate failed (epmc-api-pdf): HTTP 404
-[08:59:04]        note: candidate failed (pmc-pdf): not a pdf 200
-[08:59:04] --- [12/37] Roles of extracellular vesicles from mesenchymal stem cells in regeneration
-[08:59:14]     -> html-fulltext | papers/12 - Roles of extracellular vesicles from mesenchymal stem cells in regeneration.pdf | https://europepmc.org/article/MED/39547584
-[08:59:14]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:59:14]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:59:14]        note: candidate failed (epmc-api-pdf): HTTP 404
-[08:59:14]        note: candidate failed (pmc-pdf): not a pdf 200
-[08:59:14] --- [16/37] Ultrasonication outperforms electroporation for extracellular vesicle cargo depl
-[08:59:22]     -> abstract-only | papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf | https://doi.org/10.1016/j.vesic.2024.100052
-[08:59:22]        note: candidate failed (epmc-Europe_PMC): HTTP 500
-[08:59:22]        note: candidate failed (epmc-api-pdf): HTTP 404
-[08:59:22]        note: candidate failed (pmc-pdf): not a pdf 200
-[08:59:22]        note: jats conversion failed: jats body too small
-[08:59:22] --- [23/37] Encapsulation of hydrophilic compounds in small extracellular vesicles: Loading 
-[08:59:33]     -> downloaded | papers/23 - Encapsulation of hydrophilic compounds in small extracellular vesicles Loading capacity and impact on vesicle functions.pdf | https://europepmc.org/api/getPdf?pmcid=PMC11469324
-[08:59:33]        note: candidate failed (unpaywall-url): not a pdf 203
-[08:59:33]        note: candidate failed (unpaywall-url): not a pdf 200
-[08:59:33]        note: candidate failed (epmc-DOI): HTTP 403
-[08:59:33]        note: candidate failed (epmc-Europe_PMC): not a pdf 200
-[08:59:33] --- [25/37] Human plasma derived exosomes: Impact of active and passive drug loading approac
-[08:59:40]     -> html-fulltext | papers/25 - Human plasma derived exosomes Impact of active and passive drug loading approaches on drug delivery.pdf | https://europepmc.org/article/MED/38757071
-[08:59:40]        note: candidate failed (epmc-Europe_PMC): not a pdf 200
-[08:59:40]        note: candidate failed (epmc-Europe_PMC): HTTP 403
-[08:59:40]        note: candidate failed (epmc-api-pdf): HTTP 404
-[08:59:40]        note: candidate failed (pmc-pdf): not a pdf 200
-[08:59:40] --- [28/37] Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells
-[08:59:48]     -> abstract-only | papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf | https://www.ncbi.nlm.nih.gov/pmc/articles/4809755
-[08:59:48]        note: candidate failed (epmc-api-pdf): HTTP 404
-[08:59:48]        note: candidate failed (pmc-pdf): not a pdf 200
-[08:59:48]        note: candidate failed (semanticscholar): HTTP 500
-[08:59:48]        note: jats conversion failed: jats body too small
-[08:59:48] --- [37/37] Exosome-Based Therapeutics: A Natural Solution to Overcoming the Blood-Brain Bar
-[08:59:57]     -> downloaded | papers/37 - Exosome-Based Therapeutics A Natural Solution to Overcoming the Blood-Brain Barrier in Neurodegenerative Diseases.pdf | https://europepmc.org/api/getPdf?pmcid=PMC12426913
-[08:59:57]        note: candidate failed (unpaywall-url): HTTP 403
-[08:59:57]        note: candidate failed (unpaywall-url): not a pdf 203
-[08:59:57]        note: candidate failed (epmc-DOI): HTTP 403
-[08:59:57]        note: candidate failed (epmc-Europe_PMC): HTTP 403
+[09:01:24] loaded previous manifest: 37 entries
+[09:01:24] --- [04/37] Mesenchymal stem cell-derived extracellular vesicles: Recent therapeutics and ta
+[09:01:43]     -> abstract-only | papers/04 - Mesenchymal stem cell-derived extracellular vesicles Recent therapeutics and targeted drug delivery advances.pdf | https://doi.org/10.1002/jex2.156
+[09:01:43]        note: doi resolved via OpenAlex title search
+[09:01:43]        note: candidate failed (wiley-pattern): HTTP 403
+[09:01:43]        note: candidate failed (unpaywall-url): HTTP 403
+[09:01:43]        note: candidate failed (unpaywall-url): HTTP 403
+[09:01:43] --- [16/37] Ultrasonication outperforms electroporation for extracellular vesicle cargo depl
+[09:02:21]     -> abstract-only | papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf | https://doi.org/10.1016/j.vesic.2024.100052
+[09:02:21]        note: jats attempt 1: status=500 len=287 html=0
+[09:02:21]        note: jats attempt 2: status=500 len=287 html=0
+[09:02:21]        note: jats attempt 3: status=500 len=287 html=0
+[09:02:21]        note: eutils failed: status=200 len=82927 
+[09:02:21] --- [28/37] Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells
+[09:03:00]     -> abstract-only | papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf | https://www.ncbi.nlm.nih.gov/pmc/articles/4809755
+[09:03:00]        note: jats attempt 1: status=500 len=287 html=0
+[09:03:00]        note: jats attempt 2: status=500 len=287 html=0
+[09:03:00]        note: jats attempt 3: status=500 len=287 html=0
+[09:03:00]        note: eutils failed: status=200 len=111233 

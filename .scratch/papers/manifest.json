@@ -427,7 +427,10 @@
    "candidate failed (epmc-Europe_PMC): HTTP 500",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
-   "jats conversion failed: jats body too small"
+   "jats attempt 1: status=500 len=287 html=0",
+   "jats attempt 2: status=500 len=287 html=0",
+   "jats attempt 3: status=500 len=287 html=0",
+   "eutils failed: status=200 len=82927 "
   ],
   "is_oa": true,
   "pmcid": "PMC11671129",
@@ -727,14 +730,17 @@
   "match_score": 1.0,
   "notes": [
    "candidate failed (pmc-oa-package): no oa links",
-   "candidate failed (unpaywall-url): not a pdf 200",
+   "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (epmc-DOI): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-Europe_PMC): HTTP 500",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
-   "candidate failed (semanticscholar): HTTP 500",
-   "jats conversion failed: jats body too small"
+   "candidate failed (semanticscholar): HTTP 403",
+   "jats attempt 1: status=500 len=287 html=0",
+   "jats attempt 2: status=500 len=287 html=0",
+   "jats attempt 3: status=500 len=287 html=0",
+   "eutils failed: status=200 len=111233 "
   ],
   "is_oa": true,
   "pmcid": "PMC4809755",

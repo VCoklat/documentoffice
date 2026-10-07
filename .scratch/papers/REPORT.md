@@ -141,7 +141,7 @@
 - status: `abstract-only` | doi: `10.1016/j.vesic.2024.100052` | match: 1.0
 - file: `papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf` (33030 bytes, ? pages)
 - source: https://doi.org/10.1016/j.vesic.2024.100052
-- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; jats conversion failed: jats body too small
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; jats attempt 1: status=500 len=287 html=0; jats attempt 2: status=500 len=287 html=0; jats attempt 3: status=500 len=287 html=0; eutils failed: status=200 len=82927 
 
 ### 17. Insights into exosome transport through the blood-brain barrier and the potential therapeutical applications in brain diseases
 - status: `downloaded` | doi: `10.3390/ph16040571` | match: 1.0
@@ -213,7 +213,7 @@
 - status: `abstract-only` | doi: `10.1016/j.nano.2015.10.012` | match: 1.0
 - file: `papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf` (34533 bytes, ? pages)
 - source: https://www.ncbi.nlm.nih.gov/pmc/articles/4809755
-- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (semanticscholar): HTTP 500; jats conversion failed: jats body too small
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 203; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (semanticscholar): HTTP 403; jats attempt 1: status=500 len=287 html=0; jats attempt 2: status=500 len=287 html=0; jats attempt 3: status=500 len=287 html=0; eutils failed: status=200 len=111233 
 
 ### 29. Current strategies for exosome cargo loading and targeting delivery
 - status: `downloaded` | doi: `10.3390/cells12101416` | match: 1.0
