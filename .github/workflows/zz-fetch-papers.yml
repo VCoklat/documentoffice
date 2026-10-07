@@ -34,7 +34,7 @@ jobs:
       - name: Fetch open-access PDFs
         run: |
           ROUND="$(cat .scratch/papers/round.txt 2>/dev/null || echo all)"
-          python3 .scratch/papers/fetch_papers.py "$ROUND"
+          if [ "$ROUND" = "diag" ]; then python3 .scratch/papers/diag.py; else python3 .scratch/papers/fetch_papers.py "$ROUND"; fi
 
       - name: Commit results
         if: always()
