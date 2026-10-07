@@ -1,13 +1,7 @@
-[09:04:00] loaded previous manifest: 37 entries
-[09:04:00] --- [16/37] Ultrasonication outperforms electroporation for extracellular vesicle cargo depl
-[09:05:01]     -> html-fulltext | papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf | https://europepmc.org/article/MED/39726440
-[09:05:01]        note: jats attempt 1: status=500 len=287 html=0
-[09:05:01]        note: jats attempt 2: status=500 len=287 html=0
-[09:05:01]        note: jats attempt 3: status=500 len=287 html=0
-[09:05:01]        note: jats via eutils (82927B)
-[09:05:01] --- [28/37] Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells
-[09:05:46]     -> html-fulltext | papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf | https://europepmc.org/article/MED/26586551
-[09:05:46]        note: jats attempt 1: status=500 len=287 html=0
-[09:05:46]        note: jats attempt 2: status=500 len=287 html=0
-[09:05:46]        note: jats attempt 3: status=500 len=287 html=0
-[09:05:46]        note: jats via eutils (111233B)
+[09:07:24] loaded previous manifest: 37 entries
+[09:07:24] --- [04/37] Mesenchymal stem cell-derived extracellular vesicles: Recent therapeutics and ta
+[09:07:41]     -> abstract-only | papers/04 - Mesenchymal stem cell-derived extracellular vesicles Recent therapeutics and targeted drug delivery advances.pdf | https://doi.org/10.1002/jex2.156
+[09:07:41]        note: candidate failed (unpaywall-url): HTTP 403
+[09:07:41]        note: candidate failed (unpaywall-url): HTTP 403
+[09:07:41]        note: reader proxy failed (onlinelibrary.wiley.com): too short (6176B)
+[09:07:41]        note: reader proxy failed (doi.org): too short (5986B)
