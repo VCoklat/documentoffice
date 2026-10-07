@@ -433,8 +433,8 @@ def compress_pdf(path, limit_mb=4.0):
 def is_jats(data):
     if not data:
         return False
-    return (data[:4000].lstrip().startswith(b"<") and b"<!doctype" not in data[:200].lower()
-            and b"<article" in data[:6000] and b"<body" in data)
+    return (data[:4000].lstrip().startswith(b"<") and b"<!doctype html" not in data[:300].lower()
+            and b"<article" in data[:8000] and b"<body" in data)
 
 
 def jats_to_html(xml_bytes, fallback_title):
