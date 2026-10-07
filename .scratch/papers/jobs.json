@@ -23,8 +23,9 @@
     "journal": "Cell Death & Disease",
     "year": 2022,
     "ref": "Cell Death Dis. 2022;13(7):580",
-    "doi": "10.1038/s41419-022-05039-6",
-    "authors": "Kou M, et al"
+    "doi": "10.1038/s41419-022-05034-x",
+    "authors": "Kou M, et al",
+    "doi_fixed": true
   },
   {
     "n": 4,
@@ -176,8 +177,9 @@
     "journal": "Cell Death Discovery",
     "year": 2024,
     "ref": "Cell Death Discov. 2024;10(1):212",
-    "doi": "10.1038/s41420-024-01982-9",
-    "authors": "Tang J, Wang X, Lin X, Wu C"
+    "doi": "10.1038/s41420-024-01973-w",
+    "authors": "Tang J, Wang X, Lin X, Wu C",
+    "doi_fixed": true
   },
   {
     "n": 21,

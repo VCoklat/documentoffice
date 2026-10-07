@@ -15,6 +15,7 @@ Never bypasses paywalls: only URLs that the publisher/repository itself exposes
 to the public are used.
 """
 import difflib
+import glob
 import html as htmlmod
 import json
 import os
@@ -37,6 +38,7 @@ MAILTO = "paper-fetch@example.org"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/126.0.0.0 Safari/537.36")
 LOG = []
+PREV = {}
 
 
 def log(msg):
@@ -46,8 +48,26 @@ def log(msg):
 
 
 # ---------------------------------------------------------------- HTTP helpers
+LAST_REQ = {}
+try:
+    from curl_cffi import requests as cffi_requests
+    HAS_CFFI = True
+except Exception:  # noqa: BLE001
+    cffi_requests = None
+    HAS_CFFI = False
+
+
+def _pace(host, gap=1.2):
+    now = time.time()
+    prev = LAST_REQ.get(host, 0)
+    if now - prev < gap:
+        time.sleep(gap - (now - prev))
+    LAST_REQ[host] = time.time()
+
+
 def http(url, timeout=60, headers=None, method="GET", retries=2):
-    """Return (status, bytes, final_url, error)."""
+    """Return (status, bytes, final_url, error). Browser-TLS impersonation when available."""
+    host = urllib.parse.urlparse(url).netloc
     hdrs = {
         "User-Agent": UA,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf;q=0.9,*/*;q=0.8",
@@ -56,16 +76,24 @@ def http(url, timeout=60, headers=None, method="GET", retries=2):
     hdrs.update(headers or {})
     err = None
     for attempt in range(retries + 1):
+        _pace(host, 0.8 if attempt == 0 else 2.5)
         try:
+            if HAS_CFFI:
+                r = cffi_requests.get(url, headers=hdrs, timeout=timeout,
+                                      impersonate="chrome", allow_redirects=True)
+                return r.status_code, r.content, str(r.url), (None if r.status_code < 400 else f"HTTP {r.status_code}")
             req = urllib.request.Request(url, headers=hdrs, method=method)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return getattr(r, "status", 200), r.read(), r.geturl(), None
         except urllib.error.HTTPError as e:
-            return e.code, b"", url, f"HTTP {e.code}"
+            status, err = e.code, f"HTTP {e.code}"
         except Exception as e:  # noqa: BLE001
-            err = f"{type(e).__name__}: {e}"
-            if attempt < retries:
-                time.sleep(2 + attempt * 3)
+            status, err = None, f"{type(e).__name__}: {e}"
+        if status in (403, 429, 503) and attempt < retries:
+            time.sleep(4 + attempt * 6)
+            continue
+        if status is not None:
+            return status, b"", url, err
     return None, b"", url, err
 
 
@@ -216,8 +244,73 @@ def looks_like_pdf(data):
     return True
 
 
+STOPWORDS = {"the","and","for","with","from","into","their","based","new","via","its",
+             "using","role","roles","review","study","studies","approach","approaches"}
+
+
+def title_tokens(title):
+    return [t for t in norm(title).split() if t not in STOPWORDS and len(t) > 3]
+
+
+def pdf_text(data, pages=3):
+    try:
+        import io as _io
+        from pypdf import PdfReader
+        rd = PdfReader(_io.BytesIO(data))
+        return " ".join((rd.pages[i].extract_text() or "") for i in range(min(pages, len(rd.pages))))
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def content_matches(data, title, doi):
+    """Guard against repositories handing us the wrong article."""
+    txt = pdf_text(data)
+    if txt is None:
+        return True, "unverified"
+    nt = norm(txt)
+    toks = title_tokens(title)
+    frac = sum(1 for t in toks if t in nt) / max(1, len(toks))
+    doi_hit = bool(doi) and norm(doi) in nt
+    headline = " ".join(toks[:9])
+    if frac >= 0.72 or doi_hit or (headline and headline in nt):
+        return True, f"match(frac={frac:.2f},doi={int(doi_hit)})"
+    return False, f"mismatch(frac={frac:.2f}) :: {re.sub(chr(92)+'s+', ' ', txt)[:90]}"
+
+
 def pdf_pages(data):
     return len(re.findall(rb"/Type\s*/Page[^s]", data))
+
+
+def pmc_oa_package_pdf(pmcid):
+    """Download the PDF from NCBI's OA service (works for PMC OA subset)."""
+    st, data, _, err = http(f"https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id={pmcid}", timeout=45)
+    if not data:
+        return None, err or f"status={st}"
+    txt = data.decode("utf-8", "replace")
+    links = re.findall(r'href="([^"]+)"', txt)
+    cands = [l for l in links if l.lower().endswith(".tar.gz")] + [l for l in links if l.lower().endswith(".pdf")]
+    if not cands:
+        return None, "no oa links"
+    for link in cands:
+        url = link.replace("ftp://", "https://")
+        st, blob, _, err = http(url, timeout=180)
+        if not blob:
+            continue
+        if url.lower().endswith(".pdf") and looks_like_pdf(blob):
+            return blob, ""
+        if url.lower().endswith(".tar.gz"):
+            try:
+                import io as _io
+                import tarfile
+                with tarfile.open(fileobj=_io.BytesIO(blob)) as tf:
+                    for m in tf.getmembers():
+                        if m.name.lower().endswith(".pdf"):
+                            pdf = tf.extractfile(m).read()
+                            if looks_like_pdf(pdf):
+                                return pdf, ""
+            except Exception as e:  # noqa: BLE001
+                err = f"tar: {e}"
+    return None, err or "no usable pdf in oa package"
 
 
 def chrome_bin():
@@ -587,22 +680,30 @@ def process(job):
         if found:
             break
 
-    # ---- 3. try downloads
+    # ---- 3. try downloads (PMC OA package first: gives the publisher PDF)
+    if rec.get("pmcid"):
+        cands.insert(0, {"url": f"pmc-oa://{rec['pmcid']}", "source": "pmc-oa-package"})
     for c in cands:
-        u = c["url"]
-        if not u or not u.startswith("http"):
+        u = c["url"] or ""
+        if u.startswith("pmc-oa://"):
+            data, err = pmc_oa_package_pdf(u.split("://", 1)[1])
+            st, final = (200, u) if data else (None, u)
+        elif u.startswith("http"):
+            st, data, final, err = http(u, timeout=120)
+        else:
             continue
-        st, data, final, err = http(u, timeout=90)
         if looks_like_pdf(data):
-            rec.update({"status": "downloaded", "source_url": u, "source": c["source"],
-                        "license": c.get("license"), "bytes": len(data),
-                        "pdf_pages": pdf_pages(data)})
+            good, why = content_matches(data, title, doi)
+            if not good:
+                rec["notes"].append(f"rejected wrong-content pdf ({c['source']}): {why}")
+                continue
+            rec.update({"status": "downloaded", "source_url": final if final != u else u,
+                        "source": c["source"], "license": c.get("license"),
+                        "bytes": len(data), "pdf_pages": pdf_pages(data),
+                        "content_check": why})
             rec["_pdf"] = data
             return finish(rec, job)
         rec["notes"].append(f"candidate failed ({c['source']}): {err or 'not a pdf ' + str(st)}")
-        # if the candidate URL pointed at an HTML page, remember it for html fallback
-        if data and final and "text/html" in (c.get("source") or ""):
-            pass
 
     # ---- 4. fallback: Europe PMC JATS full text
     if ep and ep.get("pmcid"):
@@ -697,15 +798,38 @@ def process(job):
     return finish(rec, job)
 
 
+RANK = {"error": 0, "unresolved": 0, "abstract-only": 1, "html-fulltext": 2, "downloaded": 3}
+
+
 def finish(rec, job):
     pdf = rec.pop("_pdf", None)
+    n = job["n"]
+    prev = PREV.get(n) or {}
+    prev_path = os.path.join(REPO, prev["file"]) if prev.get("file") else None
+    keep_prev = False
+    if prev_path and os.path.exists(prev_path):
+        if RANK.get(prev.get("status"), 0) > RANK.get(rec["status"], 0):
+            keep_prev = True
+        elif RANK.get(prev.get("status"), 0) == RANK.get(rec["status"], 0) == 3 and pdf:
+            # a new full-text pdf with suspiciously few pages is worse than the old one
+            if pdf_pages(pdf) <= 2 < (prev.get("pdf_pages") or 0):
+                keep_prev = True
+    if keep_prev:
+        rec.update({k: prev.get(k) for k in ("file", "source_url", "source", "license",
+                                             "bytes", "pdf_pages", "status", "content_check")})
+        rec["notes"].append(f"kept previous better copy ({prev.get('status')})")
+        rec["notes"] = rec["notes"][:14]
+        return rec
     if pdf:
         fname = safe_filename(job["title"]) + ".pdf"
-        path = os.path.join(OUTDIR, f"{job['n']:02d} - {fname}")
         os.makedirs(OUTDIR, exist_ok=True)
+        path = os.path.join(OUTDIR, f"{n:02d} - {fname}")
         with open(path, "wb") as fh:
             fh.write(pdf)
         compress_pdf(path)
+        for stale in glob.glob(os.path.join(OUTDIR, f"{n:02d} - *.pdf")):
+            if os.path.abspath(stale) != os.path.abspath(path):
+                os.remove(stale)
         rec["file"] = os.path.relpath(path, REPO)
         rec["bytes"] = os.path.getsize(path)
     rec["notes"] = rec["notes"][:14]
@@ -718,9 +842,22 @@ def main():
         only = {int(x) for x in sys.argv[1].split(",")}
     jobs = json.load(open(os.path.join(HERE, "jobs.json"), encoding="utf-8"))
     os.makedirs(OUTDIR, exist_ok=True)
+    mpath = os.path.join(HERE, "manifest.json")
+    if os.path.exists(mpath):
+        try:
+            for r in json.load(open(mpath, encoding="utf-8")):
+                PREV[r["n"]] = r
+            log(f"loaded previous manifest: {len(PREV)} entries")
+        except Exception as e:  # noqa: BLE001
+            log(f"could not load previous manifest: {e}")
     results = []
     for job in jobs:
         if only and job["n"] not in only:
+            results.append(PREV.get(job["n"], {"n": job["n"], "title_given": job["title"],
+                                               "status": "not-processed", "doi": job.get("doi"),
+                                               "file": None, "notes": []}))
+            with open(os.path.join(HERE, "manifest.json"), "w", encoding="utf-8") as fh:
+                json.dump(results, fh, indent=1, ensure_ascii=False)
             continue
         log(f"--- [{job['n']:02d}/{len(jobs)}] {job['title'][:80]}")
         try:

@@ -1,0 +1,298 @@
+[
+ {
+  "n": 1,
+  "status": "downloaded",
+  "doi": "10.3389/fcell.2025.1655623",
+  "verdict": "OK(title 0.93 doi)",
+  "file": "01 - Umbrella review of mesenchymal stem cell-derived extracellular vesicles in preclinical models therapeutic efficacy across diverse conditions.pdf",
+  "first80": " TYPE Review PUBLISHED 13 October 2025 DOI 10.3389/fcell.2025.1655623 OPEN ACCESS EDITED BY Fra"
+ },
+ {
+  "n": 2,
+  "status": "abstract-only",
+  "doi": "10.1016/j.biomaterials.2022.121949",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "02 - Exosomes based strategies for brain drug delivery.pdf",
+  "first80": "Exosomes based strategies for brain drug delivery Biomaterials 2023 Abstract record only. No op"
+ },
+ {
+  "n": 3,
+  "status": "downloaded",
+  "doi": "10.1038/s41419-022-05039-6",
+  "verdict": "OK(title 0.50 doi)",
+  "file": "03 - Mesenchymal stem cell-derived extracellular vesicles for immunomodulation and regeneration a next generation therapeutic tool.pdf",
+  "first80": "ARTICLE OPEN Lomitapide, a cholesterol-lowering drug, is an anticancer agent that induces autop"
+ },
+ {
+  "n": 4,
+  "status": "abstract-only",
+  "doi": "10.1002/jex2.156",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "04 - Mesenchymal stem cell-derived extracellular vesicles Recent therapeutics and targeted drug delivery advances.pdf",
+  "first80": "Mesenchymal stem cell-derived extracellular vesicles: Recent therapeutics and targeted drug del"
+ },
+ {
+  "n": 5,
+  "status": "abstract-only",
+  "doi": "10.1016/j.tips.2024.02.006",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "05 - Genetically engineered loaded extracellular vesicles for drug delivery.pdf",
+  "first80": "Genetically engineered loaded extracellular vesicles for drug delivery Trends in Pharmacologica"
+ },
+ {
+  "n": 6,
+  "status": "html-fulltext",
+  "doi": "10.4103/nrr.nrr-d-24-00720",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "06 - Exosomes in neurodegenerative diseases Therapeutic potential and modification methods.pdf",
+  "first80": "Ovid REVIEW Exosomes in neurodegenerative diseases: Therapeutic potential and modification meth"
+ },
+ {
+  "n": 7,
+  "status": "abstract-only",
+  "doi": "10.1016/j.bcp.2022.115167",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "07 - Mesenchymal stem cells derived extracellular vesicles A promising nanomedicine for drug delivery system.pdf",
+  "first80": "Mesenchymal stem cells derived extracellular vesicles: A promising nanomedicine for drug delive"
+ },
+ {
+  "n": 8,
+  "status": "downloaded",
+  "doi": "10.1016/j.reth.2025.101058",
+  "verdict": "OK(title 0.83)",
+  "file": "08 - Mesenchymal stromal cell-derived extracellular vesicles in regenerative medicine standardization, bioengineering and clinical translation.pdf",
+  "first80": "REVIEW Open Access \u00a9 The Author(s) 2025. Open Access This article is licensed under a Creative "
+ },
+ {
+  "n": 9,
+  "status": "html-fulltext",
+  "doi": "10.3390/cells14030202",
+  "verdict": "OK(title 1.00)",
+  "file": "09 - Mesenchymal stem-cell-derived exosomes as novel drug carriers in anti-cancer treatment A myth or reality.pdf",
+  "first80": "Mesenchymal Stem-Cell-Derived Exosomes as Novel Drug Carriers in Anti-Cancer Treatment: A Myth "
+ },
+ {
+  "n": 10,
+  "status": "downloaded",
+  "doi": "10.3389/fcell.2021.705676",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "10 - From Mesenchymal Stromal Cells to Engineered Extracellular Vesicles A New Therapeutic Paradigm.pdf",
+  "first80": "fcell-09-705676 July 30, 2021 Time: 10:37 # 1 REVIEW published: 20 July 2021 doi: 10.3389/fcell"
+ },
+ {
+  "n": 11,
+  "status": "abstract-only",
+  "doi": "10.1016/j.reth.2025.03.006",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "11 - MSC-derived extracellular vesicles Precision miRNA delivery for overcoming cancer therapy resistance.pdf",
+  "first80": "MSC-derived extracellular vesicles: Precision miRNA delivery for overcoming cancer therapy resi"
+ },
+ {
+  "n": 12,
+  "status": "abstract-only",
+  "doi": "10.1016/j.mocell.2024.100151",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "12 - Roles of extracellular vesicles from mesenchymal stem cells in regeneration.pdf",
+  "first80": "Roles of extracellular vesicles from mesenchymal stem cells in regeneration Tissue Engineering "
+ },
+ {
+  "n": 13,
+  "status": "html-fulltext",
+  "doi": "10.3390/ijms25147715",
+  "verdict": "OK(title 1.00)",
+  "file": "13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf",
+  "first80": "Mesenchymal Stem Cell-Derived Exosomes as Drug Delivery Vehicles in Disease Therapy Internation"
+ },
+ {
+  "n": 14,
+  "status": "abstract-only",
+  "doi": "10.3390/pr9020356",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "14 - Overview and update on methods for cargo loading into extracellular vesicles.pdf",
+  "first80": "Overview and update on methods for cargo loading into extracellular vesicles Processes 2021 Abs"
+ },
+ {
+  "n": 15,
+  "status": "downloaded",
+  "doi": "10.1002/jev2.12404",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "15 - Minimal information for studies of extracellular vesicles (MISEV2023) From basic to advanced approaches.pdf",
+  "first80": "Received:15December2023 Revised:15December2023 Accepted:19December2023 DOI:10.1002/jev2.12404 P"
+ },
+ {
+  "n": 16,
+  "status": "html-fulltext",
+  "doi": "10.1016/j.vesic.2024.100052",
+  "verdict": "BLOCKED-PAGE",
+  "file": "16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf",
+  "first80": "Checking your browser before accessing pmc.ncbi.nlm.nih.gov ... Click here if you are not autom"
+ },
+ {
+  "n": 17,
+  "status": "downloaded",
+  "doi": "10.3390/ph16040571",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "17 - Insights into exosome transport through the blood-brain barrier and the potential therapeutical applications in brain diseases.pdf",
+  "first80": "Citation: Abdelsalam, M.; Ahmed, M.; Osaid, Z.; Hamoudi, R.; Harati, R. Insights into Exosome T"
+ },
+ {
+  "n": 18,
+  "status": "html-fulltext",
+  "doi": "10.3390/ijms26051926",
+  "verdict": "OK(title 1.00)",
+  "file": "18 - The hidden power of the secretome therapeutic potential on wound healing and Cell-Free regenerative medicine - A systematic review.pdf",
+  "first80": "The Hidden Power of the Secretome: Therapeutic Potential on Wound Healing and Cell-Free Regener"
+ },
+ {
+  "n": 19,
+  "status": "html-fulltext",
+  "doi": "10.3390/biomedicines9081061",
+  "verdict": "OK(title 1.00)",
+  "file": "19 - Exosomes potential disease biomarkers and new therapeutic targets.pdf",
+  "first80": "Exosomes: Potential Disease Biomarkers and New Therapeutic Targets Biomedicines 1. Introduction"
+ },
+ {
+  "n": 20,
+  "status": "downloaded",
+  "doi": "10.1038/s41420-024-01982-9",
+  "verdict": "OK(title 0.42 doi)",
+  "file": "20 - Mesenchymal stem cell-derived extracellular vesicles a regulator and carrier for targeting bone-related diseases.pdf",
+  "first80": "ARTICLE OPEN Neutrophil extracellular traps promote invasion and metastasis via NLRP3-mediated "
+ },
+ {
+  "n": 21,
+  "status": "downloaded",
+  "doi": "10.3389/fmed.2025.1625787",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "21 - Trends in mesenchymal stem cell-derived extracellular vesicles clinical trials 2014-2024 is efficacy optimal in a narrow dose range.pdf",
+  "first80": "fmed-12-1625787 September 16, 2025 Time: 12:39 # 1 TYPE Review PUBLISHED 18 September 2025 DOI "
+ },
+ {
+  "n": 22,
+  "status": "downloaded",
+  "doi": "10.3389/fcell.2024.1412363",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "22 - Research hotspots and trends of mesenchymal stem cell-derived extracellular vesicles for drug delivery a bibliometric and visualization analysis from.pdf",
+  "first80": "Research hotspots and trends of mesenchymal stem cell-derived extracellular vesicles for drug d"
+ },
+ {
+  "n": 23,
+  "status": "abstract-only",
+  "doi": "10.1002/adhm.202100047",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "23 - Encapsulation of hydrophilic compounds in small extracellular vesicles Loading capacity and impact on vesicle functions.pdf",
+  "first80": "Encapsulation of hydrophilic compounds in small extracellular vesicles: Loading capacity and im"
+ },
+ {
+  "n": 24,
+  "status": "downloaded",
+  "doi": "10.3390/ijms25063439",
+  "verdict": "OK(title 0.89)",
+  "file": "24 - Current methods for analyzing mesenchymal stem cell-derived extracellular vesicles.pdf",
+  "first80": "R E V I E W Open Access Functional proteins of mesenchymal stem cell-derived extracellular vesi"
+ },
+ {
+  "n": 25,
+  "status": "html-fulltext",
+  "doi": "10.1016/j.jsps.2024.102096",
+  "verdict": "BLOCKED-PAGE",
+  "file": "25 - Human plasma derived exosomes Impact of active and passive drug loading approaches on drug delivery.pdf",
+  "first80": "Checking your browser before accessing pmc.ncbi.nlm.nih.gov ... Click here if you are not autom"
+ },
+ {
+  "n": 26,
+  "status": "abstract-only",
+  "doi": "10.3390/pharmaceutics15030718",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "26 - Doxorubicin loading into milk and mesenchymal stem cells' extracellular vesicles as drug delivery vehicles.pdf",
+  "first80": "Doxorubicin loading into milk and mesenchymal stem cells' extracellular vesicles as drug delive"
+ },
+ {
+  "n": 27,
+  "status": "html-fulltext",
+  "doi": "10.3390/biom16020269",
+  "verdict": "OK(title 1.00)",
+  "file": "27 - Mesenchymal Stem Cell Exosome-Mediated Delivery of Paclitaxel for Pancreatic Cancer Therapy.pdf",
+  "first80": "Mesenchymal Stem Cell Exosome-Mediated Delivery of Paclitaxel for Pancreatic Cancer Therapy Bio"
+ },
+ {
+  "n": 28,
+  "status": "abstract-only",
+  "doi": "10.1016/j.nano.2015.10.012",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf",
+  "first80": "Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells Nanomedicine: Na"
+ },
+ {
+  "n": 29,
+  "status": "html-fulltext",
+  "doi": "10.3390/cells12101416",
+  "verdict": "OK(title 1.00)",
+  "file": "29 - Current strategies for exosome cargo loading and targeting delivery.pdf",
+  "first80": "Current Strategies for Exosome Cargo Loading and Targeting Delivery Cells 1. Introduction Extra"
+ },
+ {
+  "n": 30,
+  "status": "downloaded",
+  "doi": "10.54097/hset.v2i.549",
+  "verdict": "OK(title 1.00)",
+  "file": "30 - Mesenchymal stem cell exosomes as nanotherapeutic agents for neurodegenerative diseases.pdf",
+  "first80": "Highlights in Science, Engineering and Technology FBB 2022 Volume 2 (2022) 7 Mesenchymal Stem C"
+ },
+ {
+  "n": 31,
+  "status": "downloaded",
+  "doi": "10.2147/ijn.s200036",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "31 - Mesenchymal stem cell exosomes a two-edged sword in cancer therapy.pdf",
+  "first80": "\u00a9 2019 Vakhshiteh et al. This work is published and licensed by Dove Medical Press Limited. The"
+ },
+ {
+  "n": 32,
+  "status": "abstract-only",
+  "doi": "10.1691/ph.2021.0128",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "32 - Drug loading techniques for exosome-based drug delivery systems.pdf",
+  "first80": "Drug loading techniques for exosome-based drug delivery systems Pharmazie 2021 Abstract record "
+ },
+ {
+  "n": 33,
+  "status": "downloaded",
+  "doi": "10.1186/s12935-025-03900-0",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "33 - Revolutionizing cancer treatment engineering mesenchymal stem cell-derived small extracellular vesicles.pdf",
+  "first80": "REVIEW Open Access \u00a9 The Author(s) 2025. Open Access This article is licensed under a Creative "
+ },
+ {
+  "n": 34,
+  "status": "abstract-only",
+  "doi": "10.1007/s11064-022-03832-5",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "34 - Curcumin-primed umbilical cord mesenchymal stem cells-derived extracellular vesicles improve motor functional recovery of mice with complete spinal.pdf",
+  "first80": "Curcumin-primed umbilical cord mesenchymal stem cells-derived extracellular vesicles improve mo"
+ },
+ {
+  "n": 35,
+  "status": "abstract-only",
+  "doi": "10.1002/jcp.27615",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "35 - Therapeutic use of curcumin-encapsulated and curcumin-primed exosomes.pdf",
+  "first80": "Therapeutic use of curcumin-encapsulated and curcumin-primed exosomes Journal of Cellular Physi"
+ },
+ {
+  "n": 36,
+  "status": "downloaded",
+  "doi": "10.1186/s13287-025-04341-2",
+  "verdict": "OK(title 1.00 doi)",
+  "file": "36 - Continuous collection of human mesenchymal-stromal-cell-derived extracellular vesicles from a stirred tank reactor operated under xenogeneic-free.pdf",
+  "first80": "R E S E A R C H Open Access \u00a9 The Author(s) 2025. Open Access This article is licensed under a "
+ },
+ {
+  "n": 37,
+  "status": "abstract-only",
+  "doi": "10.1002/mco2.70386",
+  "verdict": "ABSTRACT-RECORD",
+  "file": "37 - Exosome-Based Therapeutics A Natural Solution to Overcoming the Blood-Brain Barrier in Neurodegenerative Diseases.pdf",
+  "first80": "Exosome-Based Therapeutics: A Natural Solution to Overcoming the Blood-Brain Barrier in Neurode"
+ }
+]
