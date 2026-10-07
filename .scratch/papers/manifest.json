@@ -132,20 +132,28 @@
   "doi": "10.4103/nrr.nrr-d-24-00720",
   "status": "html-fulltext",
   "file": "papers/06 - Exosomes in neurodegenerative diseases Therapeutic potential and modification methods.pdf",
-  "source_url": "https://doi.org/10.4103/nrr.nrr-d-24-00720",
+  "source_url": "https://europepmc.org/article/MED/40326981",
   "license": null,
   "match_score": 1.0,
   "notes": [
    "doi resolved via OpenAlex title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
-   "candidate failed (unpaywall-url): HTTP 403"
+   "candidate failed (unpaywall-url): HTTP 403",
+   "candidate failed (epmc-DOI): not a pdf 200",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-api-pdf): HTTP 404",
+   "candidate failed (pmc-pdf): not a pdf 200"
   ],
   "is_oa": true,
+  "pmcid": "PMC12220696",
+  "pmid": "40326981",
   "s2_abstract": "In recent years, exosomes have garnered extensive attention as therapeutic agents and early diagnostic markers in neurodegenerative disease research. Exosomes are small and can effectively cross the blood–brain barrier, allowing them to target deep brain lesions. Recent studies have demonstrated that exosomes derived from different cell types may exert therapeutic effects by regulating the expression of various inflammatory cytokines, mRNAs, and disease-related proteins, thereby halting the progression of neurodegenerative diseases and exhibiting beneficial effects. However, exosomes are composed of lipid bilayer membranes and lack the ability to recognize specific target cells. This limitation can lead to side effects and toxicity when they interact with non-specific cells. Growing evidence suggests that surface-modified exosomes have enhanced targeting capabilities and can be used as targeted drug-delivery vehicles that show promising results in the treatment of neurodegenerative diseases. In this review, we provide an up-to-date overview of existing research aimed at devising approaches to modify exosomes and elucidating their therapeutic potential in neurodegenerative diseases. Our findings indicate that exosomes can efficiently cross the blood–brain barrier to facilitate drug delivery and can also serve as early diagnostic markers for neurodegenerative diseases. We introduce the strategies being used to enhance exosome targeting, including genetic engineering, chemical modifications (both covalent, such as click chemistry and metabolic engineering, and non-covalent, such as polyvalent electrostatic and hydrophobic interactions, ligand-receptor binding, aptamer-based modifications, and the incorporation of CP05-anchored peptides), and nanomaterial modifications. Research into these strategies has confirmed that exosomes have significant therapeutic potential for neurodegenerative diseases. However, several challenges remain in the clinical application of exosomes. Improvements are needed in preparation, characterization, and optimization methods, as well as in reducing the adverse reactions associated with their use. Additionally, the range of applications and the safety of exosomes require further research and evaluation.",
-  "source": "landing-html",
-  "bytes": 3221806,
-  "pdf_pages": 29
+  "source": "europepmc-jats",
+  "bytes": 167054,
+  "pdf_pages": 13
  },
  {
   "n": 7,
@@ -257,21 +265,29 @@
   "year": 2025,
   "ref": "Front Cell Dev Biol. 2025",
   "doi": "10.1016/j.reth.2025.03.006",
-  "status": "abstract-only",
+  "status": "html-fulltext",
   "file": "papers/11 - MSC-derived extracellular vesicles Precision miRNA delivery for overcoming cancer therapy resistance.pdf",
-  "source_url": "https://doi.org/10.1016/j.reth.2025.03.006",
+  "source_url": "https://europepmc.org/article/MED/40237010",
   "license": null,
   "match_score": 1.0,
   "notes": [
    "doi resolved via OpenAlex title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (unpaywall-url): not a pdf 200",
-   "candidate failed (unpaywall-url): not a pdf 203",
-   "candidate failed (unpaywall-url): HTTP 403"
+   "candidate failed (unpaywall-url): not a pdf 200",
+   "candidate failed (unpaywall-url): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-api-pdf): HTTP 404",
+   "candidate failed (pmc-pdf): not a pdf 200"
   ],
   "is_oa": true,
+  "pmcid": "PMC11999318",
+  "pmid": "40237010",
   "s2_abstract": "Cancer remains a prominent worldwide health concern, presenting existing therapies with frequent difficulties, including major toxicity, limited effectiveness, and treatment resistance emergence. These issues highlight the necessity for novel and enhanced remedies. Exosomes, tiny extracellular vesicles that facilitate intercellular communication, have attracted interest for their potential medicinal applications. Carrying a variety of molecules, including microRNAs, small interfering RNAs, long non-coding RNAs, proteins, lipids, and DNA, these vesicles are positioned as promising cancer treatment options. Current studies have increasingly investigated the capacity of microRNAs as a strategic approach for combating malignancy. Mesenchymal stem cells (MSC) are recognized for their aptitude to augment blood vessel formation, safeguard against cellular death, and modulate immune responses. Consequently, researchers examine exosomes derived from MSCs as a safer, non-cellular choice over therapies employing MSCs, which risk undesirable differentiation. The focus is shifting towards employing miRNA-encapsulated exosomes sourced from MSCs to target and heal cancerous cells selectively. However, the exact functions of miRNAs within MSC-derived exosomes in the context of cancer are still not fully understood. Additional exploration is necessary to clarify the role of these miRNAs in malignancy progression and to pinpoint viable therapeutic targets. This review offers a comprehensive examination of exosomes derived from mesenchymal stem cells, focusing on the encapsulation of miRNAs, methods for enhancing cellular uptake and stability, and their potential applications in cancer treatment. It also addresses the difficulties linked to this methodology and considers future avenues, including insights from current clinical oncology research.",
-  "source": "abstract-record",
-  "bytes": 32970
+  "source": "europepmc-jats",
+  "bytes": 251957,
+  "pdf_pages": 14
  },
  {
   "n": 12,
@@ -280,20 +296,28 @@
   "year": 2023,
   "ref": "Tissue Eng Regen Med. 2023",
   "doi": "10.1016/j.mocell.2024.100151",
-  "status": "abstract-only",
+  "status": "html-fulltext",
   "file": "papers/12 - Roles of extracellular vesicles from mesenchymal stem cells in regeneration.pdf",
-  "source_url": "https://doi.org/10.1016/j.mocell.2024.100151",
+  "source_url": "https://europepmc.org/article/MED/39547584",
   "license": null,
   "match_score": 1.0,
   "notes": [
    "doi resolved via OpenAlex title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (unpaywall-url): not a pdf 200",
-   "candidate failed (unpaywall): not a pdf 200"
+   "candidate failed (unpaywall): not a pdf 200",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-api-pdf): HTTP 404",
+   "candidate failed (pmc-pdf): not a pdf 200"
   ],
   "is_oa": true,
+  "pmcid": "PMC11683238",
+  "pmid": "39547584",
   "s2_abstract": "Mesenchymal stem cells (MSCs) are highly valued in regenerative medicine due to their ability to self-renew and differentiate into various cell types. Their therapeutic benefits are primarily due to their paracrine effects, in particular through extracellular vesicles (EVs), which are related to intercellular communication. Recent advances in EV production and extraction technologies highlight the potential of MSC-derived EVs (MSC-EVs) in tissue engineering and regenerative medicine. MSC-EVs offer several advantages over traditional cell therapies, including reduced toxicity and immunogenicity compared with whole MSCs. EVs carrying functional molecules such as growth factors, cytokines, and miRNAs play beneficial roles in tissue repair, fibrosis treatment, and scar prevention by promoting angiogenesis, skin cell migration, proliferation, extracellular matrix remodeling, and reducing inflammation. Despite the potential of MSC-EVs, there are several limitations to their use, including variability in quality, the need for standardized methods, low yield, and concerns about the composition of EVs and the potential risks. Overall, MSC-EVs are a promising alternative to cell-based therapies, and ongoing studies aim to understand their actions and optimize their use for better clinical outcomes in wound healing and skin regeneration.",
-  "source": "abstract-record",
-  "bytes": 31054
+  "source": "europepmc-jats",
+  "bytes": 176316,
+  "pdf_pages": 7
  },
  {
   "n": 13,
@@ -400,7 +424,7 @@
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 500",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
    "jats conversion failed: jats body too small"
@@ -563,23 +587,30 @@
   "year": 2022,
   "ref": "Adv Healthc Mater. 2022",
   "doi": "10.1002/adhm.202100047",
-  "status": "abstract-only",
+  "status": "downloaded",
   "file": "papers/23 - Encapsulation of hydrophilic compounds in small extracellular vesicles Loading capacity and impact on vesicle functions.pdf",
-  "source_url": "https://doi.org/10.1002/adhm.202100047",
-  "license": null,
+  "source_url": "https://europepmc.org/api/getPdf?pmcid=PMC11469324",
+  "license": "pdf",
   "match_score": 1.0,
   "notes": [
    "doi resolved via OpenAlex title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (wiley-pattern): HTTP 403",
    "candidate failed (unpaywall-best): HTTP 403",
    "candidate failed (unpaywall): not a pdf 200",
+   "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (unpaywall-url): not a pdf 200",
-   "candidate failed (unpaywall-url): not a pdf 200"
+   "candidate failed (epmc-DOI): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): not a pdf 200"
   ],
   "is_oa": true,
+  "pmcid": "PMC11469324",
+  "pmid": "33951319",
   "s2_abstract": "Their natural functions in intercellular communication render extracellular vesicles (EV) highly attractive for drug delivery applications. However, the loading efficiency of present methods to incorporate particularly hydrophilic low molecular weight drugs of biomedical interest is largely unexplored, as is the impact these methods may have on the intrinsic structural and biological vesicle properties. Here, different methods are exploited to incorporate hydrophilic non‐membrane permeable compounds into stem cell‐derived small EV, and to assess the vesicle characteristics after the different loading processes. When comparing several methods head‐to‐head, the loading capacity increases in the order saponin ≤ sonication < fusion < freeze‐thawing ≤ osmotic shock. Interestingly, the structural and biological functions of small EV are dependent on the applied encapsulation process, with the functional properties being altered at a greater extent. Therefore, the importance of including additional characterization parameters to probe alterations of the biological functionality of small EV is clearly demonstrated. Here, freeze‐thawing and particularly the osmotic shock have proven to be the most appropriate methods for EV loading, as they achieve a high drug encapsulation and yet preserve the investigated structural and biological vesicle characteristics.",
-  "source": "abstract-record",
-  "bytes": 30844
+  "source": "epmc-Europe_PMC",
+  "bytes": 2815643,
+  "pdf_pages": 10,
+  "content_check": "match(frac=1.00,doi=1,journal=1)"
  },
  {
   "n": 24,
@@ -612,21 +643,29 @@
   "year": 2024,
   "ref": "Saudi Pharm J. 2024",
   "doi": "10.1016/j.jsps.2024.102096",
-  "status": "abstract-only",
+  "status": "html-fulltext",
   "file": "papers/25 - Human plasma derived exosomes Impact of active and passive drug loading approaches on drug delivery.pdf",
-  "source_url": "https://doi.org/10.1016/j.jsps.2024.102096",
+  "source_url": "https://europepmc.org/article/MED/38757071",
   "license": null,
   "match_score": 1.0,
   "notes": [
    "doi resolved via OpenAlex title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
-   "candidate failed (unpaywall-url): HTTP 403"
+   "candidate failed (unpaywall-url): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): not a pdf 200",
+   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-api-pdf): HTTP 404",
+   "candidate failed (pmc-pdf): not a pdf 200"
   ],
   "is_oa": true,
+  "pmcid": "PMC11097067",
+  "pmid": "38757071",
   "s2_abstract": "The aim of the current study was to explore the potential of human plasma-derived exosomes as versatile carriers for drug delivery by employing various active and passive loading methods. Exosomes were isolated from human plasma using differential centrifugation and ultrafiltration method. Drug loading was achieved by employing sonication and freeze thaw methods, facilitating effective drug encapsulation within exosomes for delivery. Each approach was examined for its effectiveness, loading efficiency and ability to preserve membrane stability. Methotrexate (MTX), a weak acid model drug was loaded at a concentration of 2.2 µM to exosomes underwent characterization using various techniques such as particle size analysis, transmission electron microscopy and drug loading capacity. Human plasma derived exosomes showed a mean size of 162.15 ± 28.21 nm and zeta potential of −30.6 ± 0.71 mV. These exosomes were successfully loaded with MTX demonstrated a better drug encapsulation of 64.538 ± 1.54 % by freeze thaw method in comparison 55.515 ± 1.907 % by sonication. In-vitro drug release displayed 60 % loaded drug released within 72 h by freeze thaw method that was significantly different from that by sonication method i.e., 99 % within 72 h (p value 0.0045). Moreover, cell viability of exosomes loaded by freeze thaw method was significantly higher than that by sonication method (p value 0.0091) suggested that there was membrane disruption by sonication method. In conclusion, this study offers valuable insights into the potential of human plasma-derived exosomes loaded by freeze thaw method suggest as a promising carrier for improved drug loading and maintenance of exosomal membrane integrity.",
-  "source": "abstract-record",
-  "bytes": 33036
+  "source": "europepmc-jats",
+  "bytes": 186120,
+  "pdf_pages": 11
  },
  {
   "n": 26,
@@ -688,13 +727,13 @@
   "match_score": 1.0,
   "notes": [
    "candidate failed (pmc-oa-package): no oa links",
-   "candidate failed (unpaywall-url): not a pdf 203",
+   "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (epmc-DOI): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 500",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
-   "candidate failed (semanticscholar): HTTP 403",
+   "candidate failed (semanticscholar): HTTP 500",
    "jats conversion failed: jats body too small"
   ],
   "is_oa": true,
@@ -885,21 +924,28 @@
   "year": 2025,
   "ref": "Pharmaceutics. 2025",
   "doi": "10.1002/mco2.70386",
-  "status": "abstract-only",
+  "status": "downloaded",
   "file": "papers/37 - Exosome-Based Therapeutics A Natural Solution to Overcoming the Blood-Brain Barrier in Neurodegenerative Diseases.pdf",
-  "source_url": "https://doi.org/10.1002/mco2.70386",
-  "license": null,
+  "source_url": "https://europepmc.org/api/getPdf?pmcid=PMC12426913",
+  "license": "pdf",
   "match_score": 1.0,
   "notes": [
    "doi resolved via OpenAlex title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (wiley-pattern): HTTP 403",
    "candidate failed (unpaywall-best): HTTP 403",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (unpaywall-url): not a pdf 203"
+   "candidate failed (unpaywall-url): not a pdf 203",
+   "candidate failed (epmc-DOI): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 403"
   ],
   "is_oa": true,
+  "pmcid": "PMC12426913",
+  "pmid": "40949486",
   "s2_abstract": "Neurodegenerative diseases present significant therapeutic challenges, primarily due to the restrictive nature of the blood–brain barrier (BBB), which limits drug delivery to the brain. While the BBB is crucial for protecting the brain from harmful substances, it also hinders the effectiveness of treatments for neurodegenerative diseases. Consequently, there is an urgent need for innovative drug delivery systems capable of bypassing the BBB to improve therapeutic outcomes. Exosomes, as endogenous nanoscale carriers, offer substantial promise for brain‐targeted drug delivery. Their unique characteristics, including the ability to cross biological barriers, high biocompatibility, intrinsic targeting capacity, natural intracellular transport mechanisms, and robust stability, render them highly promising candidates for drug delivery in the treatment of neurodegenerative disorders. This review delves into various engineering strategies for exosome‐mediated targeted drug delivery and provides an in‐depth analysis of the structural and functional properties of the BBB under normal and pathological conditions. We emphasize the potential of exosomes as drug delivery vehicles for the central nervous system, particularly in addressing neurodegenerative disorders. Furthermore, we address the key obstacles to the clinical application of exosome‐based therapies and propose future research directions aimed at optimizing these methods to develop more effective treatment strategies.",
-  "source": "abstract-record",
-  "bytes": 32043
+  "source": "epmc-Europe_PMC",
+  "bytes": 3601352,
+  "pdf_pages": 48,
+  "content_check": "match(frac=1.00,doi=1,journal=0)"
  }
 ]
