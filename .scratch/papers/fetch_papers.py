@@ -584,7 +584,7 @@ def jina_text(url):
     if not data:
         return None, err or f"status={st}"
     txt = data.decode("utf-8", "replace")
-    if len(txt) < 4000 or "Just a moment" in txt[:2000]:
+    if len(txt) < 12000 or "Just a moment" in txt[:2000]:
         return None, f"too short ({len(txt)}B)"
     return txt, ""
 
@@ -704,6 +704,9 @@ def process(job):
         for c in publisher_candidates(doi, land):
             add(c["url"], c["source"])
 
+    for extra in job.get("extra_urls") or []:
+        add(extra, "job-extra")
+
     # unpaywall
     up, err = get_json(f"https://api.unpaywall.org/v2/{urllib.parse.quote(doi)}?email={MAILTO}")
     if up:
@@ -820,7 +823,7 @@ def process(job):
 
     # ---- 4b. fallback: reader proxy for publisher pages that block datacentres
     if rec.get("is_oa") or (up and up.get("is_oa")):
-        for src_url in (cands[0]["url"] if cands else None, landings[0] if landings else None):
+        for src_url in ([c["url"] for c in cands[:3]] + landings[:2]):
             if not src_url or not src_url.startswith("http"):
                 continue
             txt, jerr = jina_text(src_url)
