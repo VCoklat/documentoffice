@@ -60,22 +60,23 @@
   "journal": "Cell Death & Disease",
   "year": 2022,
   "ref": "Cell Death Dis. 2022;13(7):580",
-  "doi": "10.1038/s41419-022-05039-6",
+  "doi": "10.1038/s41419-022-05034-x",
   "status": "downloaded",
   "file": "papers/03 - Mesenchymal stem cell-derived extracellular vesicles for immunomodulation and regeneration a next generation therapeutic tool.pdf",
-  "source_url": "https://www.nature.com/articles/s41419-022-05039-6.pdf",
+  "source_url": "https://www.nature.com/articles/s41419-022-05034-x.pdf",
   "license": null,
-  "match_score": 0.238,
+  "match_score": 1.0,
   "notes": [
-   "title mismatch vs resolved record: 'Lomitapide, a cholesterol-lowering drug, is an anticancer agent that induces autophagic ce'"
+   "candidate failed (pmc-oa-package): no oa links"
   ],
   "is_oa": true,
-  "pmcid": "PMC9279289",
-  "pmid": "35831271",
-  "s2_abstract": "Autophagy is a biological process that maintains cellular homeostasis and regulates the internal cellular environment. Hyperactivating autophagy to trigger cell death has been a suggested therapeutic strategy for cancer treatment. Mechanistic target of rapamycin (mTOR) is a crucial protein kinase that regulates autophagy; therefore, using a structure-based virtual screen analysis, we identified lomitapide, a cholesterol-lowering drug, as a potential mTOR complex 1 (mTORC1) inhibitor. Our results showed that lomitapide directly inhibits mTORC1 in vitro and induces autophagy-dependent cancer cell death by decreasing mTOR signaling, thereby inhibiting the downstream events associated with increased LC3 conversion in various cancer cells (e.g., HCT116 colorectal cancer cells) and tumor xenografts. Lomitapide also significantly suppresses the growth and viability along with elevated autophagy in patient-derived colorectal cancer organoids. Furthermore, a combination of lomitapide and immune checkpoint blocking antibodies synergistically inhibits tumor growth in murine MC38 or B16-F10 preclinical syngeneic tumor models. These results elucidate the direct, tumor-relevant immune-potentiating benefits of mTORC1 inhibition by lomitapide, which complement the current immune checkpoint blockade. This study highlights the potential repurposing of lomitapide as a new therapeutic option for cancer treatment.",
+  "pmcid": "PMC9252569",
+  "pmid": "35787632",
+  "s2_abstract": "Mesenchymal stem cells (MSCs) can be widely isolated from various tissues including bone marrow, umbilical cord, and adipose tissue, with the potential for self-renewal and multipotent differentiation. There is compelling evidence that the therapeutic effect of MSCs mainly depends on their paracrine action. Extracellular vesicles (EVs) are fundamental paracrine effectors of MSCs and play a crucial role in intercellular communication, existing in various body fluids and cell supernatants. Since MSC-derived EVs retain the function of protocells and have lower immunogenicity, they have a wide range of prospective therapeutic applications with advantages over cell therapy. We describe some characteristics of MSC-EVs, and discuss their role in immune regulation and regeneration, with emphasis on the molecular mechanism and application of MSC-EVs in the treatment of fibrosis and support tissue repair. We also highlight current challenges in the clinical application of MSC-EVs and potential ways to overcome the problem of quality heterogeneity.",
   "source": "nature-pattern",
-  "bytes": 830820,
-  "pdf_pages": 14
+  "bytes": 1150043,
+  "pdf_pages": 16,
+  "content_check": "match(frac=1.00,doi=1)"
  },
  {
   "n": 4,
@@ -175,14 +176,15 @@
   "doi": "10.1016/j.reth.2025.101058",
   "status": "downloaded",
   "file": "papers/08 - Mesenchymal stromal cell-derived extracellular vesicles in regenerative medicine standardization, bioengineering and clinical translation.pdf",
-  "source_url": "https://stemcellres.biomedcentral.com/counter/pdf/10.1186/s13287-025-04135-6",
+  "source_url": "https://link.springer.com/content/pdf/10.1186/s13287-025-04135-6.pdf",
   "license": "cc-by",
   "match_score": 0.993,
   "notes": [
    "doi resolved via Crossref title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (unpaywall-url): not a pdf 200"
+   "candidate failed (unpaywall-url): not a pdf 203"
   ],
   "is_oa": true,
   "pmcid": "PMC13631398",
@@ -190,7 +192,8 @@
   "s2_abstract": "Mesenchymal stromal cell-derived extracellular vesicles (MSC-EVs) have emerged as promising cell-free therapeutics that recapitulate key paracrine functions of MSCs whilst mitigating limitations of viable-cell therapies. Clinical translation is hindered by inconsistent dose metrics, lack of validated potency assays, and manufacturing complexities. Here we review advances in MSC-EV standardisation, source and culture determinants, engineering and delivery platforms, and clinical applications, exemplified by chronic wound healing. We operationalise dual-metric dosing (particles plus protein) linked to mechanism-aligned potency assays, adopt a route-aware exposure–response framework to guide delivery strategies, and propose decision matrices aligning MSC sources and bioprocesses with indication-specific tasks. Good Laboratory Practice safety panels and Good Manufacturing Practice scale-up strategies are outlined to support regulatory readiness. Early clinical studies demonstrate feasibility and short-term safety but reveal heterogeneous efficacy, underscoring the need for harmonised dosing and potency measures. Collectively, these insights provide a roadmap to advance MSC-EVs as indication-matched regenerative medicines.",
   "source": "openalex",
   "bytes": 4047550,
-  "pdf_pages": 20
+  "pdf_pages": 20,
+  "content_check": "match(frac=0.83,doi=0)"
  },
  {
   "n": 9,
@@ -206,12 +209,13 @@
   "match_score": 1.0,
   "notes": [
    "doi resolved via Europe PMC title search",
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (unpaywall-best): HTTP 403",
+   "candidate failed (unpaywall-best): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (epmc-Unpaywall): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Unpaywall): not a pdf 200",
+   "candidate failed (epmc-Europe_PMC): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200"
@@ -261,9 +265,8 @@
   "notes": [
    "doi resolved via OpenAlex title search",
    "candidate failed (unpaywall-url): not a pdf 200",
-   "candidate failed (unpaywall-url): not a pdf 200",
-   "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (citation_pdf_url): not a pdf 200"
+   "candidate failed (unpaywall-url): not a pdf 203",
+   "candidate failed (unpaywall-url): HTTP 403"
   ],
   "is_oa": true,
   "s2_abstract": "Cancer remains a prominent worldwide health concern, presenting existing therapies with frequent difficulties, including major toxicity, limited effectiveness, and treatment resistance emergence. These issues highlight the necessity for novel and enhanced remedies. Exosomes, tiny extracellular vesicles that facilitate intercellular communication, have attracted interest for their potential medicinal applications. Carrying a variety of molecules, including microRNAs, small interfering RNAs, long non-coding RNAs, proteins, lipids, and DNA, these vesicles are positioned as promising cancer treatment options. Current studies have increasingly investigated the capacity of microRNAs as a strategic approach for combating malignancy. Mesenchymal stem cells (MSC) are recognized for their aptitude to augment blood vessel formation, safeguard against cellular death, and modulate immune responses. Consequently, researchers examine exosomes derived from MSCs as a safer, non-cellular choice over therapies employing MSCs, which risk undesirable differentiation. The focus is shifting towards employing miRNA-encapsulated exosomes sourced from MSCs to target and heal cancerous cells selectively. However, the exact functions of miRNAs within MSC-derived exosomes in the context of cancer are still not fully understood. Additional exploration is necessary to clarify the role of these miRNAs in malignancy progression and to pinpoint viable therapeutic targets. This review offers a comprehensive examination of exosomes derived from mesenchymal stem cells, focusing on the encapsulation of miRNAs, methods for enhancing cellular uptake and stability, and their potential applications in cancer treatment. It also addresses the difficulties linked to this methodology and considers future avenues, including insights from current clinical oncology research.",
@@ -299,30 +302,29 @@
   "year": 2024,
   "ref": "Int J Mol Sci. 2024;25(14):7715",
   "doi": "10.3390/ijms25147715",
-  "status": "html-fulltext",
+  "status": "downloaded",
   "file": "papers/13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf",
-  "source_url": "https://europepmc.org/article/MED/39062956",
-  "license": null,
+  "source_url": "https://europepmc.org/api/getPdf?pmcid=PMC11277139",
+  "license": "pdf",
   "match_score": 1.0,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (unpaywall-url): HTTP 403",
+   "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-api-pdf): HTTP 404",
-   "candidate failed (pmc-pdf): not a pdf 200"
+   "candidate failed (epmc-Europe_PMC): HTTP 403"
   ],
   "is_oa": true,
   "pmcid": "PMC11277139",
   "pmid": "39062956",
   "s2_abstract": "Exosomes are small vesicles containing proteins, nucleic acids, and biological lipids, which are responsible for intercellular communication. Studies have shown that exosomes can be utilized as effective drug delivery vehicles to accurately deliver therapeutic substances to target tissues, enhancing therapeutic effects and reducing side effects. Mesenchymal stem cells (MSCs) are a class of stem cells widely used for tissue engineering, regenerative medicine, and immunotherapy. Exosomes derived from MSCs have special immunomodulatory functions, low immunogenicity, the ability to penetrate tumor tissues, and high yield, which are expected to be engineered into efficient drug delivery systems. Despite the promising promise of MSC-derived exosomes, exploring their optimal preparation methods, drug-loading modalities, and therapeutic potential remains challenging. Therefore, this article reviews the related characteristics, preparation methods, application, and potential risks of MSC-derived exosomes as drug delivery systems in order to find potential therapeutic breakthroughs.",
-  "source": "europepmc-jats",
-  "bytes": 238202,
-  "pdf_pages": 13
+  "source": "epmc-Europe_PMC",
+  "bytes": 1047028,
+  "pdf_pages": 26,
+  "content_check": "match(frac=1.00,doi=1)"
  },
  {
   "n": 14,
@@ -337,18 +339,20 @@
   "license": null,
   "match_score": 1.0,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (mdpi-pattern): HTTP 403",
+   "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
-   "candidate failed (unpaywall-best): HTTP 403",
-   "candidate failed (unpaywall-url): not a pdf 200",
+   "candidate failed (unpaywall-best): not a pdf 200",
+   "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (epmc-DOI): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-DOI): not a pdf 200",
+   "candidate failed (epmc-Europe_PMC): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
-   "candidate failed (pmc-pdf): not a pdf 200"
+   "candidate failed (pmc-pdf): not a pdf 200",
+   "jats conversion failed: jats body too small"
   ],
   "is_oa": true,
   "pmcid": "PMC8096148",
@@ -401,12 +405,15 @@
   "license": null,
   "match_score": 1.0,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): HTTP 500",
    "candidate failed (epmc-api-pdf): HTTP 404",
-   "candidate failed (pmc-pdf): not a pdf 200"
+   "candidate failed (pmc-pdf): not a pdf 200",
+   "jats conversion failed: jats body too small",
+   "kept previous better copy (html-fulltext)"
   ],
   "is_oa": true,
   "pmcid": "PMC11671129",
@@ -414,7 +421,8 @@
   "s2_abstract": "Extracellular vesicles (EVs), submicron-sized membranous structures released by cells, serve as vehicles of tissue-specific proteins and nucleic acids, facilitating intercellular communication and playing roles in pathophysiological processes. Leveraging their unique characteristics, EVs have emerged as promising drug delivery nanocarriers. Electroporation (EP) and ultrasonication (US) are among the prevalent techniques used for loading exogenous drugs into EVs owing to their simplicity and efficiency. However, the effectiveness of the two methods in depleting initial EV cargo has been overlooked. But this information is indispensable, as the bioactive residuals of EVs, notably derived from tumor or stem donor cells, may impact downstream therapeutic effects. Bridging this knowledge gap, therefore, can guide the selection of optimal drugs and loading methods tailored to therapeutic objectives. Here, we used high-throughput sequencing to investigate the protein and small RNA cargo of EVs treated with EP and US, respectively. We found that US exhibits higher efficacy in depleting EV cargo compared to EP, while US may also deplete essential endogenous molecules for combination therapy. Neither method demonstrated significant selectivity in cargo depletion, but they might preferentially retain few specific molecules. Additionally, membrane proteins are more prone to loss during US and EP treatments than cytoplasmic proteins.",
   "source": "landing-html",
   "bytes": 24754,
-  "pdf_pages": 1
+  "pdf_pages": 1,
+  "content_check": null
  },
  {
   "n": 17,
@@ -456,16 +464,16 @@
   "license": null,
   "match_score": 0.992,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
-   "candidate failed (unpaywall-url): HTTP 403",
    "candidate failed (unpaywall-url): not a pdf 200",
+   "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
-   "candidate failed (pmc-pdf): not a pdf 200",
-   "candidate failed (citation_pdf_url): not a pdf 200"
+   "candidate failed (pmc-pdf): not a pdf 200"
   ],
   "is_oa": true,
   "pmcid": "PMC11899803",
@@ -488,14 +496,15 @@
   "license": null,
   "match_score": 1.0,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (mdpi-pattern): HTTP 403",
+   "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
-   "candidate failed (unpaywall-best): HTTP 403",
-   "candidate failed (unpaywall-url): not a pdf 200",
+   "candidate failed (unpaywall-best): not a pdf 200",
+   "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (epmc-DOI): HTTP 403",
+   "candidate failed (epmc-DOI): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
@@ -515,22 +524,23 @@
   "journal": "Cell Death Discovery",
   "year": 2024,
   "ref": "Cell Death Discov. 2024;10(1):212",
-  "doi": "10.1038/s41420-024-01982-9",
+  "doi": "10.1038/s41420-024-01973-w",
   "status": "downloaded",
   "file": "papers/20 - Mesenchymal stem cell-derived extracellular vesicles a regulator and carrier for targeting bone-related diseases.pdf",
-  "source_url": "https://www.nature.com/articles/s41420-024-01982-9.pdf",
+  "source_url": "https://www.nature.com/articles/s41420-024-01973-w.pdf",
   "license": null,
-  "match_score": 0.335,
+  "match_score": 1.0,
   "notes": [
-   "title mismatch vs resolved record: 'Neutrophil extracellular traps promote invasion and metastasis via NLRP3-mediated oral squ'"
+   "candidate failed (pmc-oa-package): no oa links"
   ],
   "is_oa": true,
-  "pmcid": "PMC11066066",
-  "pmid": "38697992",
-  "s2_abstract": "Neutrophil extracellular traps (NETs) are reticular structures composed of neutrophil elastase (NE), cathepsin G (CG) and DNA-histone enzyme complexes. Accumulating evidence has revealed that NETs play important roles in tumor progression, metastasis, and thrombosis. However, our understanding of its clinical value and mechanism of action in oral squamous cell carcinoma (OSCC) is limited and has not yet been systematically described. Here, we aimed to investigate the clinical significance of NETs in OSCC and the mechanisms by which they affect its invasive and metastatic capacity. Our results demonstrated that high enrichment of NETs is associated with poor prognosis in OSCC, and mechanistic studies have shown that NE in NETs promotes invasion and metastasis via NLRP3-mediated inhibition of pyroptosis in OSCC. These findings may provide a new therapeutic approach for OSCC.",
+  "pmcid": "PMC11066013",
+  "pmid": "38697996",
+  "s2_abstract": "The escalating threat of bone-related diseases poses a significant challenge to human health. Mesenchymal stem cell (MSC)-derived extracellular vesicles (MSC-EVs), as inherent cell-secreted natural products, have emerged as promising treatments for bone-related diseases. Leveraging outstanding features such as high biocompatibility, low immunogenicity, superior biological barrier penetration, and extended circulating half-life, MSC-EVs serve as potent carriers for microRNAs (miRNAs), long no-code RNAs (lncRNAs), and other biomolecules. These cargo molecules play pivotal roles in orchestrating bone metabolism and vascularity through diverse mechanisms, thereby contributing to the amelioration of bone diseases. Additionally, engineering modifications enhance the bone-targeting ability of MSC-EVs, mitigating systemic side effects and bolstering their clinical translational potential. This review comprehensively explores the mechanisms through which MSC-EVs regulate bone-related disease progression. It delves into the therapeutic potential of MSC-EVs as adept drug carriers, augmented by engineered modification strategies tailored for osteoarthritis (OA), rheumatoid arthritis (RA), osteoporosis, and osteosarcoma. In conclusion, the exceptional promise exhibited by MSC-EVs positions them as an excellent solution with considerable translational applications in clinical orthopedics.",
   "source": "nature-pattern",
-  "bytes": 1446221,
-  "pdf_pages": 15
+  "bytes": 1735591,
+  "pdf_pages": 14,
+  "content_check": "match(frac=1.00,doi=1)"
  },
  {
   "n": 21,
@@ -612,7 +622,7 @@
   "doi": "10.3390/ijms25063439",
   "status": "downloaded",
   "file": "papers/24 - Current methods for analyzing mesenchymal stem cell-derived extracellular vesicles.pdf",
-  "source_url": "https://stemcellres.biomedcentral.com/track/pdf/10.1186/s13287-019-1484-6",
+  "source_url": "https://link.springer.com/content/pdf/10.1186/s13287-019-1484-6.pdf",
   "license": "cc-by",
   "match_score": 0.988,
   "notes": [
@@ -621,7 +631,7 @@
    "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
-   "candidate failed (unpaywall-best): HTTP 403",
+   "candidate failed (unpaywall-best): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200"
   ],
   "is_oa": true,
@@ -630,7 +640,8 @@
   "s2_abstract": "The use of extracellular vesicles (EVs) generated by mesenchymal stem cells (MSCs) holds great promise as a novel therapeutic approach. Although their immunomodulatory and regeneration potential has been reported to be similar to that of MSCs, the use of MSC-derived EVs in clinical settings will require several problems to be resolved. It is necessary to develop a standardised and widely accepted isolation technology and to improve methods such as the quantification and characterisation of MSC-derived EVs. In this way, EV studies can be compared, the acquired knowledge can be safely transferred to clinical platforms and the clinical results can be evaluated appropriately. There are many procedures for the collection and analysis of vesicles derived from different cells; however, this review provides an overview of methods for the determination of the total protein amount, specific proteins, particle number, non-protein markers like lipids and RNA, microscopy and other methods focusing on MSC-derived EVs.",
   "source": "openalex",
   "bytes": 384776,
-  "pdf_pages": 11
+  "pdf_pages": 11,
+  "content_check": "match(frac=0.89,doi=0)"
  },
  {
   "n": 25,
@@ -648,13 +659,15 @@
    "doi resolved via OpenAlex title search",
    "candidate failed (unpaywall-url): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
-   "candidate failed (unpaywall-url): HTTP 403"
+   "candidate failed (unpaywall-url): HTTP 403",
+   "kept previous better copy (html-fulltext)"
   ],
   "is_oa": true,
   "s2_abstract": "The aim of the current study was to explore the potential of human plasma-derived exosomes as versatile carriers for drug delivery by employing various active and passive loading methods. Exosomes were isolated from human plasma using differential centrifugation and ultrafiltration method. Drug loading was achieved by employing sonication and freeze thaw methods, facilitating effective drug encapsulation within exosomes for delivery. Each approach was examined for its effectiveness, loading efficiency and ability to preserve membrane stability. Methotrexate (MTX), a weak acid model drug was loaded at a concentration of 2.2 µM to exosomes underwent characterization using various techniques such as particle size analysis, transmission electron microscopy and drug loading capacity. Human plasma derived exosomes showed a mean size of 162.15 ± 28.21 nm and zeta potential of −30.6 ± 0.71 mV. These exosomes were successfully loaded with MTX demonstrated a better drug encapsulation of 64.538 ± 1.54 % by freeze thaw method in comparison 55.515 ± 1.907 % by sonication. In-vitro drug release displayed 60 % loaded drug released within 72 h by freeze thaw method that was significantly different from that by sonication method i.e., 99 % within 72 h (p value 0.0045). Moreover, cell viability of exosomes loaded by freeze thaw method was significantly higher than that by sonication method (p value 0.0091) suggested that there was membrane disruption by sonication method. In conclusion, this study offers valuable insights into the potential of human plasma-derived exosomes loaded by freeze thaw method suggest as a promising carrier for improved drug loading and maintenance of exosomal membrane integrity.",
   "source": "landing-html",
   "bytes": 24754,
-  "pdf_pages": 1
+  "pdf_pages": 1,
+  "content_check": null
  },
  {
   "n": 26,
@@ -671,10 +684,10 @@
   "notes": [
    "doi resolved via OpenAlex title search",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (mdpi-pattern): HTTP 403",
+   "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
-   "candidate failed (unpaywall-best): HTTP 403",
+   "candidate failed (unpaywall-best): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
    "candidate failed (unpaywall-url): HTTP 403"
   ],
@@ -696,13 +709,14 @@
   "license": null,
   "match_score": 1.0,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (mdpi-pattern): HTTP 403",
+   "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): HTTP 403",
-   "candidate failed (unpaywall-best): HTTP 403",
-   "candidate failed (unpaywall-url): not a pdf 200",
-   "candidate failed (epmc-DOI): HTTP 403",
+   "candidate failed (unpaywall-best): not a pdf 200",
+   "candidate failed (unpaywall-url): not a pdf 203",
+   "candidate failed (epmc-DOI): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
@@ -729,14 +743,15 @@
   "license": null,
   "match_score": 1.0,
   "notes": [
-   "candidate failed (unpaywall-url): not a pdf 200",
+   "candidate failed (pmc-oa-package): no oa links",
+   "candidate failed (unpaywall-url): not a pdf 203",
    "candidate failed (epmc-DOI): not a pdf 200",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-Europe_PMC): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200",
    "candidate failed (semanticscholar): HTTP 403",
-   "candidate failed (citation_pdf_url): not a pdf 200"
+   "jats conversion failed: jats body too small"
   ],
   "is_oa": true,
   "pmcid": "PMC4809755",
@@ -758,15 +773,16 @@
   "license": null,
   "match_score": 1.0,
   "notes": [
+   "candidate failed (pmc-oa-package): no oa links",
    "candidate failed (mdpi-pattern): HTTP 404",
-   "candidate failed (mdpi-pattern): HTTP 403",
+   "candidate failed (mdpi-pattern): not a pdf 200",
    "candidate failed (mdpi-pattern): not a pdf 203",
    "candidate failed (mdpi-pattern): not a pdf 200",
-   "candidate failed (unpaywall-best): HTTP 403",
+   "candidate failed (unpaywall-best): not a pdf 200",
    "candidate failed (unpaywall): not a pdf 200",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (epmc-DOI): HTTP 403",
-   "candidate failed (epmc-Europe_PMC): HTTP 403",
+   "candidate failed (epmc-DOI): not a pdf 200",
+   "candidate failed (epmc-Europe_PMC): not a pdf 200",
    "candidate failed (epmc-Europe_PMC): HTTP 403",
    "candidate failed (epmc-api-pdf): HTTP 404",
    "candidate failed (pmc-pdf): not a pdf 200"
@@ -946,7 +962,7 @@
    "candidate failed (wiley-pattern): HTTP 403",
    "candidate failed (unpaywall-best): HTTP 403",
    "candidate failed (unpaywall-url): HTTP 403",
-   "candidate failed (unpaywall-url): not a pdf 200"
+   "candidate failed (unpaywall-url): not a pdf 203"
   ],
   "is_oa": true,
   "s2_abstract": "Neurodegenerative diseases present significant therapeutic challenges, primarily due to the restrictive nature of the blood–brain barrier (BBB), which limits drug delivery to the brain. While the BBB is crucial for protecting the brain from harmful substances, it also hinders the effectiveness of treatments for neurodegenerative diseases. Consequently, there is an urgent need for innovative drug delivery systems capable of bypassing the BBB to improve therapeutic outcomes. Exosomes, as endogenous nanoscale carriers, offer substantial promise for brain‐targeted drug delivery. Their unique characteristics, including the ability to cross biological barriers, high biocompatibility, intrinsic targeting capacity, natural intracellular transport mechanisms, and robust stability, render them highly promising candidates for drug delivery in the treatment of neurodegenerative disorders. This review delves into various engineering strategies for exosome‐mediated targeted drug delivery and provides an in‐depth analysis of the structural and functional properties of the BBB under normal and pathological conditions. We emphasize the potential of exosomes as drug delivery vehicles for the central nervous system, particularly in addressing neurodegenerative disorders. Furthermore, we address the key obstacles to the clinical application of exosome‐based therapies and propose future research directions aimed at optimizing these methods to develop more effective treatment strategies.",

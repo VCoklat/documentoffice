@@ -19,7 +19,7 @@
 | 10 | From Mesenchymal Stromal Cells to Engineered Extracellular Vesicles: A | downloaded | frontiers-pattern | 10 - From Mesenchymal Stromal Cells to Engineered Extracellular Vesicles A New Therapeutic Paradigm.pdf |
 | 11 | MSC-derived extracellular vesicles: Precision miRNA delivery for overc | abstract-only | abstract-record | 11 - MSC-derived extracellular vesicles Precision miRNA delivery for overcoming cancer therapy resistance.pdf |
 | 12 | Roles of extracellular vesicles from mesenchymal stem cells in regener | abstract-only | abstract-record | 12 - Roles of extracellular vesicles from mesenchymal stem cells in regeneration.pdf |
-| 13 | Mesenchymal stem cell-derived exosomes as drug delivery vehicles in di | html-fulltext | europepmc-jats | 13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf |
+| 13 | Mesenchymal stem cell-derived exosomes as drug delivery vehicles in di | downloaded | epmc-Europe_PMC | 13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf |
 | 14 | Overview and update on methods for cargo loading into extracellular ve | abstract-only | abstract-record | 14 - Overview and update on methods for cargo loading into extracellular vesicles.pdf |
 | 15 | Minimal information for studies of extracellular vesicles (MISEV2023): | downloaded | unpaywall | 15 - Minimal information for studies of extracellular vesicles (MISEV2023) From basic to advanced approaches.pdf |
 | 16 | Ultrasonication outperforms electroporation for extracellular vesicle  | html-fulltext | landing-html | 16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf |
@@ -60,10 +60,10 @@
 - notes: candidate failed (epmc-DOI): not a pdf 200
 
 ### 3. Mesenchymal stem cell-derived extracellular vesicles for immunomodulation and regeneration: a next generation therapeutic tool?
-- status: `downloaded` | doi: `10.1038/s41419-022-05039-6` | match: 0.238
-- file: `papers/03 - Mesenchymal stem cell-derived extracellular vesicles for immunomodulation and regeneration a next generation therapeutic tool.pdf` (830820 bytes, 14 pages)
-- source: https://www.nature.com/articles/s41419-022-05039-6.pdf
-- notes: title mismatch vs resolved record: 'Lomitapide, a cholesterol-lowering drug, is an anticancer agent that induces autophagic ce'
+- status: `downloaded` | doi: `10.1038/s41419-022-05034-x` | match: 1.0
+- file: `papers/03 - Mesenchymal stem cell-derived extracellular vesicles for immunomodulation and regeneration a next generation therapeutic tool.pdf` (1150043 bytes, 16 pages)
+- source: https://www.nature.com/articles/s41419-022-05034-x.pdf
+- notes: candidate failed (pmc-oa-package): no oa links
 
 ### 4. Mesenchymal stem cell-derived extracellular vesicles: Recent therapeutics and targeted drug delivery advances
 - status: `abstract-only` | doi: `10.1002/jex2.156` | match: 1.0
@@ -92,14 +92,14 @@
 ### 8. Mesenchymal stromal cell-derived extracellular vesicles in regenerative medicine: standardization, bioengineering and clinical translation
 - status: `downloaded` | doi: `10.1016/j.reth.2025.101058` | match: 0.993
 - file: `papers/08 - Mesenchymal stromal cell-derived extracellular vesicles in regenerative medicine standardization, bioengineering and clinical translation.pdf` (4047550 bytes, 20 pages)
-- source: https://stemcellres.biomedcentral.com/counter/pdf/10.1186/s13287-025-04135-6
-- notes: doi resolved via Crossref title search; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall-url): not a pdf 200
+- source: https://link.springer.com/content/pdf/10.1186/s13287-025-04135-6.pdf
+- notes: doi resolved via Crossref title search; candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall-url): not a pdf 203
 
 ### 9. Mesenchymal stem-cell-derived exosomes as novel drug carriers in anti-cancer treatment: A myth or reality?
 - status: `html-fulltext` | doi: `10.3390/cells14030202` | match: 1.0
 - file: `papers/09 - Mesenchymal stem-cell-derived exosomes as novel drug carriers in anti-cancer treatment A myth or reality.pdf` (201882 bytes, 10 pages)
 - source: https://europepmc.org/article/MED/39936993
-- notes: doi resolved via Europe PMC title search; candidate failed (mdpi-pattern): HTTP 404; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-Unpaywall): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- notes: doi resolved via Europe PMC title search; candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-Unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
 
 ### 10. From Mesenchymal Stromal Cells to Engineered Extracellular Vesicles: A New Therapeutic Paradigm
 - status: `downloaded` | doi: `10.3389/fcell.2021.705676` | match: 1.0
@@ -111,7 +111,7 @@
 - status: `abstract-only` | doi: `10.1016/j.reth.2025.03.006` | match: 1.0
 - file: `papers/11 - MSC-derived extracellular vesicles Precision miRNA delivery for overcoming cancer therapy resistance.pdf` (32970 bytes, ? pages)
 - source: https://doi.org/10.1016/j.reth.2025.03.006
-- notes: doi resolved via OpenAlex title search; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (citation_pdf_url): not a pdf 200
+- notes: doi resolved via OpenAlex title search; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 203; candidate failed (unpaywall-url): HTTP 403
 
 ### 12. Roles of extracellular vesicles from mesenchymal stem cells in regeneration
 - status: `abstract-only` | doi: `10.1016/j.mocell.2024.100151` | match: 1.0
@@ -120,16 +120,16 @@
 - notes: doi resolved via OpenAlex title search; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200
 
 ### 13. Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy
-- status: `html-fulltext` | doi: `10.3390/ijms25147715` | match: 1.0
-- file: `papers/13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf` (238202 bytes, 13 pages)
-- source: https://europepmc.org/article/MED/39062956
-- notes: candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): HTTP 404; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- status: `downloaded` | doi: `10.3390/ijms25147715` | match: 1.0
+- file: `papers/13 - Mesenchymal stem cell-derived exosomes as drug delivery vehicles in disease therapy.pdf` (1047028 bytes, 26 pages)
+- source: https://europepmc.org/api/getPdf?pmcid=PMC11277139
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): HTTP 404; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403
 
 ### 14. Overview and update on methods for cargo loading into extracellular vesicles
 - status: `abstract-only` | doi: `10.3390/pr9020356` | match: 1.0
 - file: `papers/14 - Overview and update on methods for cargo loading into extracellular vesicles.pdf` (32709 bytes, ? pages)
 - source: https://doi.org/10.3390/pr9020356
-- notes: candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): HTTP 403; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-DOI): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall-url): not a pdf 203; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; jats conversion failed: jats body too small
 
 ### 15. Minimal information for studies of extracellular vesicles (MISEV2023): From basic to advanced approaches
 - status: `downloaded` | doi: `10.1002/jev2.12404` | match: 1.0
@@ -141,7 +141,7 @@
 - status: `html-fulltext` | doi: `10.1016/j.vesic.2024.100052` | match: 1.0
 - file: `papers/16 - Ultrasonication outperforms electroporation for extracellular vesicle cargo depletion.pdf` (24754 bytes, 1 pages)
 - source: https://www.ncbi.nlm.nih.gov/pmc/articles/11671129
-- notes: candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 500; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; jats conversion failed: jats body too small; kept previous better copy (html-fulltext)
 
 ### 17. Insights into exosome transport through the blood-brain barrier and the potential therapeutical applications in brain diseases
 - status: `downloaded` | doi: `10.3390/ph16040571` | match: 1.0
@@ -153,19 +153,19 @@
 - status: `html-fulltext` | doi: `10.3390/ijms26051926` | match: 0.992
 - file: `papers/18 - The hidden power of the secretome therapeutic potential on wound healing and Cell-Free regenerative medicine - A systematic review.pdf` (217560 bytes, 10 pages)
 - source: https://europepmc.org/article/MED/40076553
-- notes: candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall-url): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (citation_pdf_url): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): not a pdf 203; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
 
 ### 19. Exosomes: potential disease biomarkers and new therapeutic targets
 - status: `html-fulltext` | doi: `10.3390/biomedicines9081061` | match: 1.0
 - file: `papers/19 - Exosomes potential disease biomarkers and new therapeutic targets.pdf` (500290 bytes, 30 pages)
 - source: https://europepmc.org/article/MED/34440265
-- notes: candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): HTTP 403; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-DOI): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall-url): not a pdf 203; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
 
 ### 20. Mesenchymal stem cell-derived extracellular vesicles: a regulator and carrier for targeting bone-related diseases
-- status: `downloaded` | doi: `10.1038/s41420-024-01982-9` | match: 0.335
-- file: `papers/20 - Mesenchymal stem cell-derived extracellular vesicles a regulator and carrier for targeting bone-related diseases.pdf` (1446221 bytes, 15 pages)
-- source: https://www.nature.com/articles/s41420-024-01982-9.pdf
-- notes: title mismatch vs resolved record: 'Neutrophil extracellular traps promote invasion and metastasis via NLRP3-mediated oral squ'
+- status: `downloaded` | doi: `10.1038/s41420-024-01973-w` | match: 1.0
+- file: `papers/20 - Mesenchymal stem cell-derived extracellular vesicles a regulator and carrier for targeting bone-related diseases.pdf` (1735591 bytes, 14 pages)
+- source: https://www.nature.com/articles/s41420-024-01973-w.pdf
+- notes: candidate failed (pmc-oa-package): no oa links
 
 ### 21. Trends in mesenchymal stem cell-derived extracellular vesicles clinical trials 2014-2024: is efficacy optimal in a narrow dose range?
 - status: `downloaded` | doi: `10.3389/fmed.2025.1625787` | match: 1.0
@@ -188,38 +188,38 @@
 ### 24. Current methods for analyzing mesenchymal stem cell-derived extracellular vesicles
 - status: `downloaded` | doi: `10.3390/ijms25063439` | match: 0.988
 - file: `papers/24 - Current methods for analyzing mesenchymal stem cell-derived extracellular vesicles.pdf` (384776 bytes, 11 pages)
-- source: https://stemcellres.biomedcentral.com/track/pdf/10.1186/s13287-019-1484-6
-- notes: doi resolved via Crossref title search; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall): not a pdf 200
+- source: https://link.springer.com/content/pdf/10.1186/s13287-019-1484-6.pdf
+- notes: doi resolved via Crossref title search; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall): not a pdf 200
 
 ### 25. Human plasma derived exosomes: Impact of active and passive drug loading approaches on drug delivery
 - status: `html-fulltext` | doi: `10.1016/j.jsps.2024.102096` | match: 1.0
 - file: `papers/25 - Human plasma derived exosomes Impact of active and passive drug loading approaches on drug delivery.pdf` (24754 bytes, 1 pages)
 - source: https://www.ncbi.nlm.nih.gov/pmc/articles/11097067
-- notes: doi resolved via OpenAlex title search; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403
+- notes: doi resolved via OpenAlex title search; candidate failed (unpaywall-url): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; kept previous better copy (html-fulltext)
 
 ### 26. Doxorubicin loading into milk and mesenchymal stem cells' extracellular vesicles as drug delivery vehicles
 - status: `abstract-only` | doi: `10.3390/pharmaceutics15030718` | match: 1.0
 - file: `papers/26 - Doxorubicin loading into milk and mesenchymal stem cells' extracellular vesicles as drug delivery vehicles.pdf` (33203 bytes, ? pages)
 - source: https://doi.org/10.3390/pharmaceutics15030718
-- notes: doi resolved via OpenAlex title search; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): HTTP 403; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403
+- notes: doi resolved via OpenAlex title search; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403
 
 ### 27. Mesenchymal Stem Cell Exosome-Mediated Delivery of Paclitaxel for Pancreatic Cancer Therapy
 - status: `html-fulltext` | doi: `10.3390/biom16020269` | match: 1.0
 - file: `papers/27 - Mesenchymal Stem Cell Exosome-Mediated Delivery of Paclitaxel for Pancreatic Cancer Therapy.pdf` (201624 bytes, 12 pages)
 - source: https://europepmc.org/article/MED/41750339
-- notes: candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): HTTP 403; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): HTTP 403; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall-url): not a pdf 200; candidate failed (epmc-DOI): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): HTTP 403; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall-url): not a pdf 203; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
 
 ### 28. Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells
 - status: `abstract-only` | doi: `10.1016/j.nano.2015.10.012` | match: 1.0
 - file: `papers/28 - Development of exosome-encapsulated paclitaxel to overcome MDR in cancer cells.pdf` (34533 bytes, ? pages)
 - source: https://www.ncbi.nlm.nih.gov/pmc/articles/4809755
-- notes: candidate failed (unpaywall-url): not a pdf 200; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (semanticscholar): HTTP 403; candidate failed (citation_pdf_url): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (unpaywall-url): not a pdf 203; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200; candidate failed (semanticscholar): HTTP 403; jats conversion failed: jats body too small
 
 ### 29. Current strategies for exosome cargo loading and targeting delivery
 - status: `html-fulltext` | doi: `10.3390/cells12101416` | match: 1.0
 - file: `papers/29 - Current strategies for exosome cargo loading and targeting delivery.pdf` (210275 bytes, 13 pages)
 - source: https://europepmc.org/article/MED/37408250
-- notes: candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): HTTP 403; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-DOI): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
+- notes: candidate failed (pmc-oa-package): no oa links; candidate failed (mdpi-pattern): HTTP 404; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (mdpi-pattern): not a pdf 203; candidate failed (mdpi-pattern): not a pdf 200; candidate failed (unpaywall-best): not a pdf 200; candidate failed (unpaywall): not a pdf 200; candidate failed (unpaywall-url): HTTP 403; candidate failed (epmc-DOI): not a pdf 200; candidate failed (epmc-Europe_PMC): not a pdf 200; candidate failed (epmc-Europe_PMC): HTTP 403; candidate failed (epmc-api-pdf): HTTP 404; candidate failed (pmc-pdf): not a pdf 200
 
 ### 30. Mesenchymal stem cell exosomes as nanotherapeutic agents for neurodegenerative diseases
 - status: `downloaded` | doi: `10.54097/hset.v2i.549` | match: 1.0
@@ -267,4 +267,4 @@
 - status: `abstract-only` | doi: `10.1002/mco2.70386` | match: 1.0
 - file: `papers/37 - Exosome-Based Therapeutics A Natural Solution to Overcoming the Blood-Brain Barrier in Neurodegenerative Diseases.pdf` (32043 bytes, ? pages)
 - source: https://doi.org/10.1002/mco2.70386
-- notes: doi resolved via OpenAlex title search; candidate failed (wiley-pattern): HTTP 403; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall-url): not a pdf 200
+- notes: doi resolved via OpenAlex title search; candidate failed (wiley-pattern): HTTP 403; candidate failed (unpaywall-best): HTTP 403; candidate failed (unpaywall-url): HTTP 403; candidate failed (unpaywall-url): not a pdf 203
