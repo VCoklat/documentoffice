@@ -629,6 +629,8 @@ def process(job):
                         rec["doi"] = None
                         return finish(rec, job)
     rec["doi"] = doi
+    if ep is None and doi:
+        ep, _ = epmc_by_doi(doi)
 
     # verify resolved title against the given title
     resolved_title = None
@@ -772,6 +774,16 @@ def process(job):
                 break
             rec["notes"].append(f"jats attempt {attempt + 1}: status={st} len={len(data)}")
             time.sleep(4 + attempt * 4)
+        if not (data and data.lstrip().startswith(b"<") and b"<body" in data):
+            digits = re.sub(r"[^0-9]", "", pmcid)
+            st, edata, _, eerr = http(
+                "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+                f"?db=pmc&id={digits}&retmode=xml", timeout=90, retries=1)
+            if edata and b"<article" in edata[:8000]:
+                data = edata
+                rec["notes"].append(f"jats via eutils ({len(edata)}B)")
+            else:
+                rec["notes"].append(f"eutils failed: status={st} len={len(edata)} {eerr or ''}")
         if data and data.lstrip().startswith(b"<"):
             doc, jerr = jats_to_html(data, title)
             if doc:
